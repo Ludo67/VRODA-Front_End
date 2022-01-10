@@ -16,6 +16,7 @@
 .nab_btn {
     color:white;
     text-decoration: none;
+    font-size: 18px;
 }
 
 .nab_btn:hover{
@@ -30,7 +31,7 @@
     width: auto;
 }
 
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 720px) {
     .navbar .search-container {
       float: none;
 

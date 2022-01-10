@@ -199,3 +199,21 @@ body{margin-top:20px;
     .container{
       margin-top: 20px;
     }
+
+    .catalog{
+      font-size: 28px;
+    }
+
+    .nab_btn:hover{
+      text-decoration: none;
+      color:white;
+    }
+    .nab_btn{
+      text-decoration: none;
+      float:right;
+      display: block;
+      text-align: end;
+      background-color: lightgray;
+    }
+
+    
