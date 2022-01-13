@@ -1,0 +1,153 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css';
+@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css';
+
+
+body{margin-top:20px;
+    background:#ddd;
+    }
+    
+    
+    /*
+    * @subsection Shop
+    */
+
+    .wrapper{
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .smolcontainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+
+    }
+    
+    .title{
+        font-size: 32px;
+    }
+    /* .smolcontainer{
+        display:flex;
+        flex-direction: vertical;
+        align-items: center
+    } */
+    .product {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .product.tumbnail {
+      box-shadow: 0 5px 25px 0 transparent;
+      transition: 0.3s linear;
+      padding-top: 0;
+    }
+    
+    .product.tumbnail img:hover {
+      box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    span{
+        display:block;
+        width:500px;
+        max-width: max-content;
+        word-wrap:break-word;
+        text-align: center;
+    }
+    
+    
+    @media (max-width: 767px) {
+      .single-product .table-mobile tr {
+        padding-top: 0;
+      }
+      .single-product .table-mobile tr:before {
+        display: none;
+      }
+    }
+    
+    .price {
+      display: inline-block;
+      font-size: 15px;
+      font-family: Montserrat, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: #2b2f3e;
+    }
+    
+    .price.sale {
+      color: #e75854;
+    }
+    
+    .price del {
+      color: #b0bec5;
+    }
+    
+    .quantity {
+      text-align: center;
+      font-family: Montserrat, sans-serif;
+      font-size: 12px;
+      background: #eceff1;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      width: 82px;
+      height: auto;
+      display: inline-block;
+    }
+    
+    .quantity span {
+      display: inline-block;
+    }
+    
+    .quantity .num {
+      width: 26px;
+    }
+    
+    .quantity [class*='fa-'] {
+      padding-top: 4px;
+      width: 22px;
+      padding-bottom: 4px;
+      color: #b0bec5;
+      cursor: pointer;
+    }
+    
+
+    .picture{
+        width: auto;
+        height: auto;
+    }
+    .picture:hover{
+      width: auto;
+      height: auto;
+      cursor: pointer;
+  }
+    .container{
+      margin-top: 20px;
+    }
+
+    .catalog{
+      font-size: 28px;
+    }
+
+    .nab_btn:hover{
+      text-decoration: none;
+      color:white;
+    }
+    .nab_btn{
+      text-decoration: none;
+      float:right;
+      display: block;
+      text-align: end;
+      background-color: lightgray;
+    }
+    .nab_btn2{
+      text-decoration: none;
+      display: inline-block;
+      background-color: lightgray;
+    }
+
+    

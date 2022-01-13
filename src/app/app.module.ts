@@ -12,6 +12,7 @@ import { ProductService } from './product.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { AddformComponent } from './addform/addform.component';
+import { ProductComponent } from './product/product.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AddformComponent } from './addform/addform.component';
     AppComponent,
     NavbarComponent,
     CatalogComponent,
-    AddformComponent
+    AddformComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,

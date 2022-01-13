@@ -5,7 +5,7 @@
       <div class="form-group col-md-6">
         <label for="category_id">Category Id</label>
         <input type="text" formControlName="category_id" class="form-control" id="category_id" placeholder="Category Id" required minlength="4">
-        <small *ngIf="pform.get('category_id').touched && pform.get('category_id').invalid" class="text-danger">Category Id is required</small>
+        <small *ngIf="pform.get('category_id').touched && pform.get('category_id').invalid" class="text-danger">Category Id is required (4 characters min.)</small>
       </div>
       <div class="form-group col-md-6">
         <label for="title">Title</label>
@@ -14,13 +14,13 @@
       </div>
     <div class="form-group col-md-6">
       <label for="price">Price</label>
-      <input type="number" formControlName="price" class="form-control" id="price" placeholder="$">
-      <small *ngIf="pform.get('price').touched && pform.get('price').invalid" class="text-danger">Product price is required</small>
+      <input type="number" formControlName="price" class="form-control" id="price" placeholder="$" min="0">
+      <small *ngIf="pform.get('price').touched && pform.get('price').invalid" class="text-danger">Positive Product price is required</small>
     </div>
     <div class="form-group col-md-6">
       <label for="quantity">Quantity</label>
       <input type="number" formControlName="quantity" class="form-control" id="quantity" placeholder="Quantity">
-      <small *ngIf="pform.get('quantity').touched && pform.get('quantity').invalid" class="text-danger">Product quantity is required</small>
+      <small *ngIf="pform.get('quantity').touched && pform.get('quantity').invalid" class="text-danger">Positive Product quantity is required</small>
     </div>
       <div class="form-group col-md-6">
         <label for="description">Description</label>

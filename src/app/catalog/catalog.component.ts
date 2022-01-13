@@ -28,7 +28,7 @@ public getProducts(): void{
     }
     );
 }
-
+/*
 public getProductById(product_id: string): void{
 
   this.productService.getByProductId(product_id).subscribe(
@@ -48,7 +48,7 @@ public getProductById(product_id: string): void{
 
  
 }
-
+*/
 public deleteProductById(product_id: string): void{
     
   alert("Deleted Product Id is " + product_id);

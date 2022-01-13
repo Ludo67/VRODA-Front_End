@@ -41,7 +41,6 @@ export class AddformComponent implements OnInit {
 
   public addProduct(): void{
     this.newProduct = new Product(this.pform.value);
-    alert(this.newProduct);
     console.log(this.newProduct);
     
     this.productService.createProduct(this.newProduct).subscribe(
