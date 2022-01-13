@@ -196,6 +196,11 @@ body{margin-top:20px;
         width: 100%;
         height: auto;
     }
+    .picture:hover{
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+  }
     .container{
       margin-top: 20px;
     }
@@ -213,6 +218,11 @@ body{margin-top:20px;
       float:right;
       display: block;
       text-align: end;
+      background-color: lightgray;
+    }
+    .nab_btn2{
+      text-decoration: none;
+      display: inline-block;
       background-color: lightgray;
     }
 
