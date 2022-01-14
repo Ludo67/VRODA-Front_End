@@ -5,13 +5,12 @@
 
     <div class="indent">
         <div class="search-container">
-            <form> <!--action="/action_page.php">-->
-              <input type="text" placeholder="Search.." name="search" class="searchInput">
-              <button type="submit"><i class="fa fa-search"></i></button>
+            <form [formGroup]="searchForm">
+              <input type="text" placeholder="Search.." name="search" class="searchInput" formControlName="search">
+              <button type="submit" (click)="Search()"><i class="fa fa-search"></i></button>
             </form>
           </div>
         <a mat-button routerLink="cart" class="nab_btn">My Cart</a>
-        <!--<a mat-button routerLink="aboutus" class="nab_btn">About Us</a>-->
         <a mat-button routerLink="account" class="nab_btn">My Account</a>
     </div>
 </mat-toolbar>

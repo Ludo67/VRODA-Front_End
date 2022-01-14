@@ -22,9 +22,9 @@ export class ProductService{
         return this.http.get<Product>(`${this.apiUrl}/products/${product_id}`);
     }
 
-    // public updateProduct(product Product): Observable<Product>{
-    //     return this.http.put<Product[]>(`${this.apiUrl}/newProduct/{product_id}`, product);
-    // }
+    public updateProduct(product: Product): Observable<Product>{
+        return this.http.put<Product>(`${this.apiUrl}/products/${product.productId}`, product);
+    }
 
     public createProduct(product: Product): Observable<Product>{
         return this.http.post<Product>(`${this.apiUrl}/newProduct/`, product);
@@ -32,6 +32,10 @@ export class ProductService{
 
     public deleteProduct(product_id: string): Observable<void>{
         return this.http.delete<void>(`${this.apiUrl}/products/${product_id}`);
+    }
+
+    public getProductsByTitle(title: string): Observable<Product[]>{
+        return this.http.get<Product[]>(`${this.apiUrl}/products/title/${title}`);
     }
 
 

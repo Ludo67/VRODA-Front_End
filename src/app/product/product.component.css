@@ -79,52 +79,22 @@ body{margin-top:20px;
       color: #2b2f3e;
     }
     
-    .price.sale {
-      color: #e75854;
-    }
-    
-    .price del {
-      color: #b0bec5;
-    }
-    
     .quantity {
       text-align: center;
+      font-weight: bold;
       font-family: Montserrat, sans-serif;
       font-size: 12px;
       background: #eceff1;
-      padding-top: 5px;
-      padding-bottom: 5px;
+      padding: 5px 25px 5px 25px;
       width: 82px;
       height: auto;
       display: inline-block;
     }
     
-    .quantity span {
-      display: inline-block;
-    }
-    
-    .quantity .num {
-      width: 26px;
-    }
-    
-    .quantity [class*='fa-'] {
-      padding-top: 4px;
-      width: 22px;
-      padding-bottom: 4px;
-      color: #b0bec5;
-      cursor: pointer;
-    }
-    
-
     .picture{
-        width: auto;
-        height: auto;
+        width: 350px;
+        height: 280px;
     }
-    .picture:hover{
-      width: auto;
-      height: auto;
-      cursor: pointer;
-  }
     .container{
       margin-top: 20px;
     }
