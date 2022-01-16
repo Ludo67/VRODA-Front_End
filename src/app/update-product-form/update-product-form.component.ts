@@ -4,7 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../product.service';
 import { Product } from './Product';
-
+import { ProductEntity } from '../product';
 @Component({
   selector: 'app-update-product-form',
   templateUrl: './update-product-form.component.html',
@@ -18,31 +18,37 @@ export class UpdateProductFormComponent implements OnInit {
 
     sub: any;
     id: any;
-    product: any;
+    public product: any;
+    public product2: any;
     pform!: FormGroup;
-    private updatedProduct: Product = new Product();
+    updatedProduct!: ProductEntity;
+
 
   ngOnInit(): void {
     
     this.sub = this.Activatedroute.paramMap.subscribe(params => {
       this.id = params.get('id');
-      this.product = this.getProductById(this.id);
-
+      console.log(this.getProductById(this.id));
       this.pform = new FormGroup({
 
+        'product_id' : new FormControl(this.id),
         'category_id' : new FormControl(null, Validators.required),
         'title' : new FormControl(null, Validators.required),
         'price' : new FormControl(null, Validators.required),
         'quantity' : new FormControl(null, Validators.required),
         'description' : new FormControl(null, Validators.required)
   
-    });
+    });      
   });
+
 }
 
 onSubmit():void{
-  //this.updatedProduct = new Product(this.pform.value);
+  
 alert("Product Updated Successfully!");
+console.log(this.pform.value);
+/*this.updatedProduct = new Product(this.pform.value);
+this.updateProduct(this.updateProduct);*/
 }
 
 public getProductById(product_id: string): void{
@@ -55,9 +61,10 @@ public getProductById(product_id: string): void{
     }
   )
 }
-/*
-public updateProduct(): void{
-  this.productService.updateProduct(this.updatedProduct).subscribe(
+
+public updateProduct(updatedProduct: ProductEntity): void{
+
+  this.productService.updateProduct(updatedProduct).subscribe(
     (response:Product)=>{
       this.product=response;
     },
@@ -66,5 +73,6 @@ public updateProduct(): void{
     }
   )
 }
-*/
+
+
 }
