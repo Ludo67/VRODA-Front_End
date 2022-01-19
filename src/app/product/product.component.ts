@@ -18,6 +18,7 @@ export class ProductComponent implements OnInit {
   sub: any;
   id: any;
   product: any;
+  productt: any;
 
   ngOnInit(): void {
     this.sub = this.Activatedroute.paramMap.subscribe(params => {
@@ -54,7 +55,7 @@ export class ProductComponent implements OnInit {
       );
   }
 
-  public updateProduct(id: string): void{
-    this.router.navigate(['/products/update/', id]);
+  public updateProduct(id: string, id2: string): void{
+    this.router.navigate(['/products/update/', id, id2]);
   }
 }

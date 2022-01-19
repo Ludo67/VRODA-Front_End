@@ -1,4 +1,4 @@
-import { ProductEntity } from '../product';
+import { ProductEntity, ProductEntityClass } from '../product';
 import { Product } from './Product';
 import {Injectable} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -23,7 +23,7 @@ export class ProductService{
         return this.http.get<ProductEntity>(`${this.apiUrl}/products/${product_id}`);
     }
 
-    public updateProduct(product: ProductEntity): Observable<Product>{
+    public updateProduct(product: ProductEntityClass): Observable<Product>{
         return this.http.put<ProductEntity>(`${this.apiUrl}/products/${product.productId}`, product);
     }
 
