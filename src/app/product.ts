@@ -9,16 +9,16 @@ export interface ProductEntity{
 }
 
 export class ProductEntityClass{
-    productId!: string;
-    categoryId!: number;
+    product_id!: string;
+    category_id!: number;
     quantity!: number;
     title!: string;
     price!: number;
     description!: string;
-    public constructor(productId:string, categoryId:number, quantity:number,
+    public constructor(product_id:string, category_id:number, quantity:number,
                  title:string, price:number, description:string){
-                    this.productId= productId;
-                    this.categoryId = categoryId;
+                    this.product_id= product_id;
+                    this.category_id = category_id;
                     this.quantity = quantity;
                     this.title = title;
                     this.price = price;

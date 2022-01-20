@@ -22,8 +22,8 @@ export class ProductService{
         return this.http.get<ProductEntity>(`${this.apiUrl}/products/${product_id}`);
     }
 
-    public updateProduct(product: ProductEntityClass): Observable<ProductEntity>{
-        return this.http.put<ProductEntityClass>(`${this.apiUrl}/products/${product.productId}`, product);
+    public updateProduct(product: ProductEntityClass): Observable<ProductEntityClass>{
+        return this.http.put<ProductEntityClass>(`${this.apiUrl}/products/${product.product_id}`, product);
     }
 
     public createProduct(product: ProductEntity): Observable<ProductEntity>{
