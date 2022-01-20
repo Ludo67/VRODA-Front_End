@@ -32,8 +32,8 @@ export class UpdateProductFormComponent implements OnInit {
       this.getProductById(this.id)
       this.pform = new FormGroup({
 
-        'product_id' : new FormControl(this.id),
-        'category_id' : new FormControl(null, Validators.required),
+        'productId' : new FormControl(this.id),
+        'categoryId' : new FormControl(null, Validators.required),
         'title' : new FormControl(null, Validators.required),
         'price' : new FormControl(null, Validators.required),
         'quantity' : new FormControl(null, Validators.required),
@@ -47,7 +47,7 @@ export class UpdateProductFormComponent implements OnInit {
 onSubmit():void{
   this.updatedProduct = new ProductEntityClass(
   this.id,
-  this.pform.get(['category_id'])?.value,
+  this.pform.get(['categoryId'])?.value,
   this.pform.get(['title'])?.value,
   this.pform.get(['price'])?.value,
   this.pform.get(['quantity'])?.value,

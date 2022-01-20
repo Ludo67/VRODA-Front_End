@@ -22,7 +22,7 @@ export class AddformComponent implements OnInit {
   ngOnInit(): void {
     this.pform = new FormGroup({
 
-      'category_id' : new FormControl(null, Validators.required),
+      'categoryId' : new FormControl(null, Validators.required),
       'title' : new FormControl(null, Validators.required),
       'price' : new FormControl(null, Validators.required),
       'quantity' : new FormControl(null, Validators.required),
