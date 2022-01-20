@@ -11,7 +11,7 @@ const routes: Routes = [
   {path: 'account', component: CatalogComponent},
   {path: 'cart', component: CatalogComponent},
   {path: 'products/:id', component: ProductComponent},
-  {path: 'products/update/:id', component: UpdateProductFormComponent},
+  {path: 'products/update/:id/:id2', component: UpdateProductFormComponent},
   {path: 'products/title/:title', component: ProductsearchComponent},
   {path: 'addProduct', component: AddformComponent},
   {path: 'home/addProduct', component: AddformComponent},

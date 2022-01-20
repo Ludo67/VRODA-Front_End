@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Product } from '../product';
+import { ProductEntity } from '../product';
 import { ProductService } from '../product.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { ProductService } from '../product.service';
   styleUrls: ['./productsearch.component.css']
 })
 export class ProductsearchComponent implements OnInit {
-  public products: Product[] =[];
+  public products: ProductEntity[] =[];
   constructor(private Activatedroute:ActivatedRoute, 
     private router:Router,
     private productService:ProductService) { }
@@ -28,10 +28,9 @@ export class ProductsearchComponent implements OnInit {
 
   }
 
-
 public getProductsByTitle(title: string): void{
   this.productService.getProductsByTitle(title).subscribe(
-    (response: Product[]) =>{
+    (response: ProductEntity[]) =>{
       this.products=response;
     },
     (error: HttpErrorResponse)=>{
@@ -39,4 +38,5 @@ public getProductsByTitle(title: string): void{
     }
     );
 }
+
 }

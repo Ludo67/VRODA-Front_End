@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../product';
+import { ProductEntity } from '../product';
 import { ProductService } from '../product.service';
 
 @Component({
@@ -10,8 +10,8 @@ import { ProductService } from '../product.service';
 })
 export class CatalogComponent implements OnInit {
 
-  public products: Product[] =[];
-  public product!: Product;
+  public products: ProductEntity[] =[];
+  public product!: ProductEntity;
   constructor(private productService: ProductService) { }
 
   ngOnInit(){
@@ -20,7 +20,7 @@ export class CatalogComponent implements OnInit {
 
 public getProducts(): void{
   this.productService.getProducts().subscribe(
-    (response: Product[]) =>{
+    (response: ProductEntity[]) =>{
       this.products=response;
     },
     (error: HttpErrorResponse)=>{
@@ -48,7 +48,7 @@ public getProductById(product_id: string): void{
 
  
 }
-*/
+
 public deleteProductById(product_id: string): void{
     
   alert("Deleted Product Id is " + product_id);
@@ -64,5 +64,5 @@ public deleteProductById(product_id: string): void{
 refresh(): void {
   window.location.reload();
 }
-
+*/
 }

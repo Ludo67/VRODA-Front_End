@@ -2,7 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../product.service';
-import { Product } from '../product';
+import { ProductEntity } from '../product';
 
 @Component({
   selector: 'app-product',
@@ -18,6 +18,7 @@ export class ProductComponent implements OnInit {
   sub: any;
   id: any;
   product: any;
+  productt: any;
 
   ngOnInit(): void {
     this.sub = this.Activatedroute.paramMap.subscribe(params => {
@@ -30,7 +31,7 @@ export class ProductComponent implements OnInit {
   public getProductById(product_id: string): void{
 
     this.productService.getByProductId(product_id).subscribe(
-      (response:Product)=>{
+      (response:ProductEntity)=>{
         this.product=response;
       },
       (error: HttpErrorResponse)=>{
@@ -54,7 +55,7 @@ export class ProductComponent implements OnInit {
       );
   }
 
-  public updateProduct(id: string): void{
-    this.router.navigate(['/products/update/', id]);
+  public updateProduct(id: string, id2: string): void{
+    this.router.navigate(['/products/update/', id, id2]);
   }
 }
