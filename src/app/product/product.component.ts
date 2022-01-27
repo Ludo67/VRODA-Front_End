@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../product.service';
+import { CartService } from '../cart.service';
 import { ProductEntity } from '../product';
 
 @Component({
@@ -13,7 +14,8 @@ export class ProductComponent implements OnInit {
 
   constructor(private Activatedroute:ActivatedRoute, 
               private router:Router,
-              private productService:ProductService) { }
+              private productService:ProductService,
+              private cartService:CartService) { }
 
   sub: any;
   id: any;
@@ -28,6 +30,19 @@ export class ProductComponent implements OnInit {
     });
   }
   
+  public addToCart(productToCart: ProductEntity): void{
+
+    this.cartService.addProductToCart(productToCart).subscribe(
+      (response:ProductEntity)=>{
+        this.product=response;
+        alert("Product added to cart!")
+      },
+      (error: HttpErrorResponse)=>{
+        alert(error.message);
+      }
+    )
+  }
+
   public getProductById(product_id: string): void{
 
     this.productService.getByProductId(product_id).subscribe(

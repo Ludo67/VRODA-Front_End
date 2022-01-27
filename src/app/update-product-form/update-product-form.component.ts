@@ -48,9 +48,9 @@ onSubmit():void{
   this.updatedProduct = new ProductEntityClass(
   this.id,
   this.pform.get(['categoryId'])?.value,
+  this.pform.get(['quantity'])?.value,
   this.pform.get(['title'])?.value,
   this.pform.get(['price'])?.value,
-  this.pform.get(['quantity'])?.value,
   this.pform.get(['description'])?.value
   
   )
@@ -76,7 +76,7 @@ public updateProduct(updatedProduct: ProductEntityClass): void{
 
   this.productService.updateProduct(updatedProduct).subscribe(
     (response:Product)=>{
-      alert(this.product);
+
         this.product=response;
     },
     (error: HttpErrorResponse)=>{

@@ -5,11 +5,12 @@ import { AddformComponent } from './addform/addform.component';
 import { ProductComponent } from './product/product.component';
 import { ProductsearchComponent } from './productsearch/productsearch.component';
 import { UpdateProductFormComponent } from './update-product-form/update-product-form.component';
+import { CartComponent } from './cart/cart.component';
 const routes: Routes = [
   //{path: "", component: NavbarComponent},
   {path: 'home', component: CatalogComponent},
   {path: 'account', component: CatalogComponent},
-  {path: 'cart', component: CatalogComponent},
+  {path: 'cart', component: CartComponent},
   {path: 'products/:id', component: ProductComponent},
   {path: 'products/update/:id/:id2', component: UpdateProductFormComponent},
   {path: 'products/title/:title', component: ProductsearchComponent},

@@ -15,6 +15,7 @@ import { AddformComponent } from './addform/addform.component';
 import { ProductComponent } from './product/product.component';
 import { ProductsearchComponent } from './productsearch/productsearch.component';
 import { UpdateProductFormComponent } from './update-product-form/update-product-form.component';
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { UpdateProductFormComponent } from './update-product-form/update-product
     AddformComponent,
     ProductComponent,
     ProductsearchComponent,
-    UpdateProductFormComponent
+    UpdateProductFormComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
