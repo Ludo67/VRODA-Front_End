@@ -5,6 +5,7 @@ import { ProductService } from '../product.service';
 import { CartService } from '../cart.service';
 import { ProductEntity } from '../product';
 
+
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -35,12 +36,14 @@ export class ProductComponent implements OnInit {
     this.cartService.addProductToCart(productToCart).subscribe(
       (response:ProductEntity)=>{
         this.product=response;
-        alert("Product added to cart!")
+        //alert("Product added to cart!")
       },
       (error: HttpErrorResponse)=>{
         alert(error.message);
       }
     )
+
+    document.getElementById('addToCartText').innerHTML += '<br> Item added to Cart!';
   }
 
   public getProductById(product_id: string): void{

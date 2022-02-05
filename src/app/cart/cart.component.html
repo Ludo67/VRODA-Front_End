@@ -2,24 +2,23 @@
 <div class="container bootstrap snipets">
     <h1 class="text-center text-muted catalog">MyVRODA Cart</h1>
     <hr>
+
     <div *ngFor="let product of products;let indexOfelement=index;">
     <div class="wrapper">
         
         <img src="https://via.placeholder.com/350x280/FFB6C1/000000" alt="" class="picture">
 
-
         <div class="smolcontainer">
-            
         <h3 class="title">{{product.title}}</h3>
         <br><br><br>
         <span class="price">${{product.price}}</span>
         <br><br><br>
         <!-- <span class="quantity">{{product.quantity}}</span> -->
         
-            <input type="number" name="quantity" value="{{product.quantity}}" class="quantity" id="quantity">
+            <input type="number" name="quantity" value="{{product.quantity}}" class="quantity" id="quantity" (change)="updateCart(product,indexOfelement+1)">
     <br><br><br>
         <span><a mat-button (click)="deleteCartProductById(product.productId)" id="delete" class="nab_btn2" >Delete</a>&nbsp;
-            <a mat-button (click)="updateCart(product,indexOfelement+1)" id="update" class="nab_btn2" >Update</a>
+            <!-- <a mat-button (click)="updateCart(product,indexOfelement+1)" id="update" class="nab_btn2" >Update</a> -->
              <!-- <button type="submit" id="submit" class="btn btn-primary submit">Update</button> -->
             </span> 
         </div>

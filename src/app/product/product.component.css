@@ -27,6 +27,11 @@ body{margin-top:20px;
 
     }
     
+    .addToCartText{
+      font-size: 20px;
+      color: #1f75fe;
+    }
+
     .title{
         font-size: 32px;
     }
