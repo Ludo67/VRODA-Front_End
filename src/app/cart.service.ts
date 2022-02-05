@@ -25,5 +25,9 @@ export class CartService{
     public deleteCartProductById(product_id: string): Observable<void>{
         return this.http.delete<void>(`${this.apiUrl}/cart/delete/${product_id}`);
     }
+
+    public updateCart(product: ProductEntityClass): Observable<ProductEntityClass>{
+        return this.http.put<ProductEntityClass>(`${this.apiUrl}/cart/update/${product.productId}`, product);
+    }
     
 }

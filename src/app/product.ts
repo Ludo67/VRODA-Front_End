@@ -5,7 +5,7 @@ export interface ProductEntity{
     title: string;
     price: number;
     description: string;
-    
+    image: string;
 }
 
 export class ProductEntityClass{
@@ -22,7 +22,7 @@ export class ProductEntityClass{
                     this.quantity = quantity;
                     this.title = title;
                     this.price = price;
-                    this.description = description;
+                    this.description = description
                 }
 
 }

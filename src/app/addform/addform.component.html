@@ -27,12 +27,19 @@
         <textarea formControlName="description" class="form-control" id="description" rows="3" required minlength="10"></textarea>
         <small *ngIf="pform.get('description').touched && pform.get('description').invalid" class="text-danger">Product description is required (10 characters min.)</small>
       </div>
-<!--
+
+      <!-- <div class="form-group col-md-6">
+        <label for="image">Image</label>
+        <input type="file" name="image">
+        <small *ngIf="pform.get('image').touched && pform.get('image').invalid" class="text-danger">File needed</small>
+      </div> -->
+    
+
       <div class="form-group">
         <label for="exampleFormControlFile1">Example file input</label>
-        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+        <input type="file" class="form-control-file" id="exampleFormControlFile1" accept="image/x-png,image/gif,image/jpeg">
       </div>
-    -->
+   
     
     <button type="submit" id="submit" [disabled]="pform.invalid" class="btn btn-primary submit">Submit</button>
 </div>  

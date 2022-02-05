@@ -2,7 +2,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CartService } from '../cart.service';
-import { ProductEntity } from '../product';
+import { ProductEntity,ProductEntityClass } from '../product';
+import { Cart } from '../cart';
 
 @Component({
   selector: 'app-cart',
@@ -16,12 +17,18 @@ export class CartComponent implements OnInit {
     private cartService:CartService) { }
 
     products: any;
+    product: any;
+    updatedProduct : any;
+
     ngOnInit(){
       this.getCartProduct();
   }
-  
 
   public getCartProduct(): void{
+
+    // var items = ProductEntity[];
+    // items.add(product);
+
     this.cartService.getCartItems().subscribe(
       (response: ProductEntity[]) =>{
         this.products=response;
@@ -45,7 +52,38 @@ export class CartComponent implements OnInit {
       }
       );
   }
+
+
   refresh(): void {
     window.location.reload();
+}
+
+public updateCart(updatedProduct: ProductEntityClass, index:number): void{
+
+  // let index = this.products.findIndex( product => {
+  //   if (product.title === updatedProduct.title) {
+  //     return true;
+  //   }
+  // });
+
+  updatedProduct.quantity =+ document.querySelectorAll('input')[index].value;
+  console.log(updatedProduct);
+  // updatedProduct.quantity = updatedQuantity;
+
+  if((updatedProduct.quantity==0)){
+    this.deleteCartProductById(updatedProduct.productId);
+  }
+
+  this.cartService.updateCart(updatedProduct).subscribe(
+    (response:Cart)=>{
+        alert("The quantity has been changed to "+ updatedProduct.quantity);
+        this.product=response;
+    },
+    (error: HttpErrorResponse)=>{
+      alert(error.message);
+    }
+  )
+  
+  
 }
 }

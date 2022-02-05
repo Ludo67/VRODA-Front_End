@@ -38,7 +38,6 @@ export class UpdateProductFormComponent implements OnInit {
         'price' : new FormControl(null, Validators.required),
         'quantity' : new FormControl(null, Validators.required),
         'description' : new FormControl(null, Validators.required)
-  
     });      
   });
 
@@ -51,8 +50,7 @@ onSubmit():void{
   this.pform.get(['quantity'])?.value,
   this.pform.get(['title'])?.value,
   this.pform.get(['price'])?.value,
-  this.pform.get(['description'])?.value
-  
+  this.pform.get(['description'])?.value,
   )
   
 
