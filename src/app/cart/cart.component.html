@@ -36,8 +36,18 @@
      <h4 class="sum" id="sumText"></h4>
      <h4 class="tax" id="tax"><b>Taxes</b></h4>
      <h4 class="tax" id="taxText"></h4>
+
+     <h4 class="deliveryTxt" id="deliveryTxt"><b>Delivery Options</b></h4>
+     <select name="delivery" id="delivery" (change)="calculateAmount(products)">
+        <option value="Free">Free</option>
+        <option value="Plus">Plus (5$)</option>
+        <option value="Express">Express (15$)</option>
+      </select>
+
      <h4 class="tot" id="tot"><b>Total</b></h4>
      <h4 class="tot" id="totText"></h4>
+
+     <h5><b><u>(Note)</u>: If you want to Change your delivery option after having <br> clicked the checkout with PayPal button. Please reload the page</b></h5>
 
 
    <img  class="picture" src="./paypal.png" id="checkout" (click)="render()">

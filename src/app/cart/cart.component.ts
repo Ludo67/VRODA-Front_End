@@ -58,6 +58,7 @@ export class CartComponent implements OnInit {
 
   sum !: number;
   taxes !: number;
+  delivery !: number;
   total !: number;
 
  public calculateAmount(products: ProductEntityClass[]): void{
@@ -66,7 +67,30 @@ export class CartComponent implements OnInit {
 
   this.taxes = this.sum* 0.15;
 
-  this.total = this.sum+this.taxes;
+  var e = (document.getElementById("delivery") as HTMLSelectElement).value;
+  console.log("Delivery Option:"+e);
+
+  switch(e){
+    case ("Free"):{
+      this.delivery = 0;
+      break;
+    }
+    case ("Plus"):{
+      this.delivery = 5;
+      break;
+    }
+    case ("Express"):{
+      this.delivery = 15;
+      break;
+    }
+    default:{
+
+      break;
+    }
+  }
+
+
+  this.total = this.sum+this.taxes+ this.delivery;
 
   // console.log("Sum of articles "+ this.sum);
   document.getElementById('sumText').innerHTML = this.sum.toFixed(2) + ' $';
@@ -74,6 +98,7 @@ export class CartComponent implements OnInit {
   document.getElementById('totText').innerHTML = this.total.toFixed(2)+ ' $'; 
  
  }
+
 
  public render():void{
    let totalVal:string;

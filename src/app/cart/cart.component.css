@@ -114,24 +114,18 @@ body{margin-top:20px;
     }
 
     #paypal{
-      /* background-image: url('./paypal.png');
-      height: 50px;
-      width: 200px;
-      align-items: right;
-      display: flex;
-      justify-content:right; */
-      margin-top: -80px;
+      margin-top: -130px;
       width: 150px;
       margin-left: 700px;
     }
 
     #checkout{
+      background-image: url("paypal.png");
         height: 50px;
         width: 200px;
-        /* align-items: center;
-        justify-content:center; */
-        margin-top: -120px;
+        margin-top: -220px;
         margin-left: 700px;
+        border-radius: 12px;
 
     }
     
@@ -174,11 +168,20 @@ body{margin-top:20px;
     }
 
     #tot{
+      margin-left: 500px;
+      margin-top: -60px;
+    }
+
+    #totText{
+      margin-left: 500px;
+    }
+
+    #deliveryTxt{
       margin-left: 300px;
       margin-top: -80px;
     }
 
-    #totText{
+    #delivery{
       margin-left: 300px;
     }
 
