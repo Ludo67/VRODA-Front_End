@@ -76,4 +76,5 @@ export class ProductComponent implements OnInit {
   public updateProduct(id: string, id2: string): void{
     this.router.navigate(['/products/update/', id, id2]);
   }
-}
+
+ }

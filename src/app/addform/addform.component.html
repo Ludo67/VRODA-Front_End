@@ -28,17 +28,29 @@
         <small *ngIf="pform.get('description').touched && pform.get('description').invalid" class="text-danger">Product description is required (10 characters min.)</small>
       </div>
 
-      <!-- <div class="form-group col-md-6">
-        <label for="image">Image</label>
-        <input type="file" name="image">
-        <small *ngIf="pform.get('image').touched && pform.get('image').invalid" class="text-danger">File needed</small>
-      </div> -->
+      <div class="form-group col-md-6">
+        <label for="image">Product Image <b>(.png only) and base 64 format</b></label>
+        <br>
+        <label for="image">Here is a base64 converter: </label> <a href="https://www.base64encoder.io/image-to-base64-converter/" target="_blank">Click here</a>
+        <textarea formControlName="image" class="form-control" id="image" rows="3" required minlength="10"></textarea>
+        <small *ngIf="pform.get('image').touched && pform.get('image').invalid" class="text-danger">Image in base 64 is required</small>
+      </div>
     
 
-      <div class="form-group">
-        <label for="exampleFormControlFile1">Example file input</label>
+      <!-- <div class="form-group">
+        <label for="exampleFormControlFile1">Product Image</label>
+        <br>
         <input type="file" class="form-control-file" id="exampleFormControlFile1" accept="image/x-png,image/gif,image/jpeg">
-      </div>
+
+       <input
+        className="relative cursor-pointer"
+        type="file"
+        name="file"
+        onChange={handleOnChange}
+        multiple
+        accept="image/*"
+      /> 
+      </div> -->
    
     
     <button type="submit" id="submit" [disabled]="pform.invalid" class="btn btn-primary submit">Submit</button>

@@ -26,7 +26,8 @@ export class AddformComponent implements OnInit {
       'title' : new FormControl(null, Validators.required),
       'price' : new FormControl(null, Validators.required),
       'quantity' : new FormControl(null, Validators.required),
-      'description' : new FormControl(null, Validators.required)
+      'description' : new FormControl(null, Validators.required),
+      'image' : new FormControl(null, Validators.required)
 
   });
   }
@@ -54,4 +55,6 @@ export class AddformComponent implements OnInit {
     this.pform.reset();
     
   }
+
+  
 }

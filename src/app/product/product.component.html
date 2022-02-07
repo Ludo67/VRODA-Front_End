@@ -3,11 +3,12 @@
     <hr>
     <div class="wrapper">
         
-        <img src="https://via.placeholder.com/350x280/FFB6C1/000000" alt="" class="picture">
-
+        <img src="data:image/png;base64,{{product.image}}" class="picture" >
 
         <div class="smolcontainer">
             
+
+        <!-- <h3 class="image">{{product.image}}</h3> -->
         <h3 class="title">{{product.title}}</h3>
         <br>
         <span class="price">${{product.price}}</span>
@@ -27,5 +28,7 @@
     <a mat-button (click)="updateProduct(product.productId, product.categoryId)" class="nab_btn2" id="update">Update</a>
 
     <a mat-button (click)="addToCart(product)" class="nab_btn2" id="addToCart">Add To Cart</a>
+    <img class="{{product.image}}"/>
+
     <h4 class="addToCartText" id="addToCartText"></h4>
   </div>

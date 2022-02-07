@@ -1,12 +1,12 @@
 
-<div class="container bootstrap snipets">
-    <h1 class="text-center text-muted catalog">MyVRODA Cart</h1>
+<div class="container bootstrap snipets" >
+    <h1 class="text-center text-muted catalog">My Cart</h1>
     <hr>
 
     <div *ngFor="let product of products;let indexOfelement=index;">
     <div class="wrapper">
         
-        <img src="https://via.placeholder.com/350x280/FFB6C1/000000" alt="" class="picture">
+        <img src="data:image/png;base64,{{product.image}}" class="picture" >
 
         <div class="smolcontainer">
         <h3 class="title">{{product.title}}</h3>
@@ -26,10 +26,26 @@
         
         
     </div>
-    
     <hr>
     </div>
- 
+
+    <!-- <input type="submit" name="sum" value="sum" class="sum" id="sum" (click)="calculateAmount(products)"> -->
+     <div *ng-init="calculateAmount(products)"></div>
+
+     <h2 class="sum" id="sum"><b>Subtotal</b></h2>
+     <h2 class="sumText" id="sumText"></h2>
+     <h2 class="tax" id="tax"><b>Taxes</b></h2>
+     <h2 class="taxText" id="taxText"></h2>
+     <hr id="totLine">
+     <br>
+     <h2 class="tot" id="tot"><b>Total</b></h2>
+     <h2 class="totText" id="totText"></h2>
+
+
+     <img src="./paypal.png" class="picture" id="checkout" (click)="checkout()">
+     <!-- <input type="submit" class="checkout" id="checkout" (click)="checkout()"> -->
+
+    <!-- <div *ngFor="let product of products;let indexOfelement=index;">${{product.price[0]}}+=${{product.price[1]}}</div> -->
 
     <!--<a mat-button (click)="deleteProductById(product.productId)" class="nab_btn2" id="delete">Delete</a> &nbsp;
     <a mat-button (click)="updateProduct(product.productId, product.categoryId)" class="nab_btn2" id="update">Update</a>-->

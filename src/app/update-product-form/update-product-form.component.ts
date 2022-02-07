@@ -22,7 +22,7 @@ export class UpdateProductFormComponent implements OnInit {
     product: any;
 
     pform!: FormGroup;
-    updatedProduct = new ProductEntityClass("",0,0,"",0,"")
+    updatedProduct = new ProductEntityClass("",0,0,"",0,"","")
 
 
   ngOnInit(): void {
@@ -37,7 +37,8 @@ export class UpdateProductFormComponent implements OnInit {
         'title' : new FormControl(null, Validators.required),
         'price' : new FormControl(null, Validators.required),
         'quantity' : new FormControl(null, Validators.required),
-        'description' : new FormControl(null, Validators.required)
+        'description' : new FormControl(null, Validators.required),
+        'image' : new FormControl(null, Validators.required)
     });      
   });
 
@@ -51,6 +52,7 @@ onSubmit():void{
   this.pform.get(['title'])?.value,
   this.pform.get(['price'])?.value,
   this.pform.get(['description'])?.value,
+  this.pform.get(['image'])?.value,
   )
   
 

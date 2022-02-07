@@ -24,15 +24,10 @@ export class CartComponent implements OnInit {
       this.getCartProduct();
   }
 
-  public timeout(ms: number) { //pass a time in milliseconds to this function
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-
   public getCartProduct(): void{
 
     // var items = ProductEntity[];
     // items.add(product);
-
     this.cartService.getCartItems().subscribe(
       (response: ProductEntity[]) =>{
         this.products=response;
@@ -41,7 +36,33 @@ export class CartComponent implements OnInit {
         alert (error.message);
       }
       );
+
+      
   }
+
+  sum !: number;
+  taxes !: number;
+  total !: number;
+
+ public calculateAmount(products: ProductEntityClass[]): void{
+  
+  this.sum = products.reduce((sum, product) => sum + (product.price*product.quantity), 0);
+
+  this.taxes = this.sum* 0.15;
+
+  this.total = this.sum+this.taxes;
+
+  console.log("Sum of articles "+ this.sum);
+  document.getElementById('sumText').innerHTML = this.sum.toFixed(2) + ' $';
+  document.getElementById('taxText').innerHTML = this.taxes.toFixed(2)+ ' $';
+  document.getElementById('totText').innerHTML = this.total.toFixed(2)+ ' $'; 
+ 
+ }
+
+ public checkout():void{
+  alert("Sum of articles "+ this.sum.toFixed(2) + "\ntaxes: " + this.taxes.toFixed(2)+ "\ntotal: "+ this.total.toFixed(2));
+ }
+
 
   public deleteCartProductById(product_id: string): void{
     
@@ -64,12 +85,6 @@ export class CartComponent implements OnInit {
 
 public updateCart(updatedProduct: ProductEntityClass, index:number): void{
 
-  // let index = this.products.findIndex( product => {
-  //   if (product.title === updatedProduct.title) {
-  //     return true;
-  //   }
-  // });
-
   updatedProduct.quantity =+ document.querySelectorAll('input')[index].value;
 
   if((updatedProduct.quantity==0)){
@@ -79,16 +94,11 @@ public updateCart(updatedProduct: ProductEntityClass, index:number): void{
   this.cartService.updateCart(updatedProduct).subscribe(
     (response:Cart)=>{
         console.log("The quantity has been changed to "+ updatedProduct.quantity);
-        document.getElementById('update').innerHTML += '<br>The quantity has been changed to '+ updatedProduct.quantity;
         this.product=response;
     },
     (error: HttpErrorResponse)=>{
       alert(error.message);
     }
   )
-
-  // document.getElementById('update').innerHTML += '<br>The quantity has been changed to '+ updatedProduct.quantity;
-  this.timeout(1000);
-  document.getElementById('update').innerHTML += '';
 }
 }

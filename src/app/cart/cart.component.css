@@ -99,6 +99,22 @@ body{margin-top:20px;
       height: auto;
       display: inline-block;
     }
+
+    #delete{
+      background-color: #dc143c;
+      color: white;
+    }
+
+    #checkout{
+      background-image: url('./paypal.png');
+      height: 50px;
+      width: 200px;
+      align-items: right;
+      display: flex;
+      justify-content:right;
+      margin-top: -300px;
+      margin-left: 900px;
+    }
     
     .picture{
         width: 350px;
@@ -127,6 +143,13 @@ body{margin-top:20px;
       text-decoration: none;
       display: inline-block;
       background-color: lightgray;
+    }
+
+    #totLine{
+      border: 0;
+      border-top: 2px solid black;
+      width: 100px;
+      margin: 0;
     }
 
     
