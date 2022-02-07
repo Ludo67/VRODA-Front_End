@@ -39,7 +39,7 @@
         <label for="image">Product Image <b>(.png only) and base 64 format</b></label>
         <br>
         <label for="image">Here is a base64 converter: </label> <a href="https://www.base64encoder.io/image-to-base64-converter/" target="_blank">Click here</a>
-        <textarea formControlName="image" class="form-control" id="image" rows="3" required minlength="10"></textarea>
+        <textarea formControlName="image" class="form-control" id="image" rows="3" required minlength="10"[(ngModel)]="product.image"></textarea>
         <small *ngIf="pform.get('image').touched && pform.get('image').invalid" class="text-danger">Image in base 64 is required</small>
       </div>
 <!--
