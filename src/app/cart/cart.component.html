@@ -11,7 +11,7 @@
         <div class="smolcontainer">
         <h3 class="title">{{product.title}}</h3>
         <br><br><br>
-        <span class="price">${{product.price}}</span>
+        <span class="price">{{product.price}} $</span>
         <br><br><br>
         <!-- <span class="quantity">{{product.quantity}}</span> -->
         
@@ -30,19 +30,21 @@
     </div>
 
     <!-- <input type="submit" name="sum" value="sum" class="sum" id="sum" (click)="calculateAmount(products)"> -->
-     <div *ng-init="calculateAmount(products)"></div>
+     
 
-     <h2 class="sum" id="sum"><b>Subtotal</b></h2>
-     <h2 class="sumText" id="sumText"></h2>
-     <h2 class="tax" id="tax"><b>Taxes</b></h2>
-     <h2 class="taxText" id="taxText"></h2>
-     <hr id="totLine">
-     <br>
-     <h2 class="tot" id="tot"><b>Total</b></h2>
-     <h2 class="totText" id="totText"></h2>
+     <h4 class="sum" id="sum"><b>Subtotal</b></h4>
+     <h4 class="sum" id="sumText"></h4>
+     <h4 class="tax" id="tax"><b>Taxes</b></h4>
+     <h4 class="tax" id="taxText"></h4>
+     <h4 class="tot" id="tot"><b>Total</b></h4>
+     <h4 class="tot" id="totText"></h4>
 
 
-     <img src="./paypal.png" class="picture" id="checkout" (click)="checkout()">
+   <!-- <img src="./paypal.png" class="picture" id="checkout" (click)="checkout()"> -->
+
+   
+    <div id="paypal"></div>
+    <div *ng-init="calculateAmount(products)" class="invisible"></div>
      <!-- <input type="submit" class="checkout" id="checkout" (click)="checkout()"> -->
 
     <!-- <div *ngFor="let product of products;let indexOfelement=index;">${{product.price[0]}}+=${{product.price[1]}}</div> -->

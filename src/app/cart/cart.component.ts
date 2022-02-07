@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CartService } from '../cart.service';
 import { ProductEntity,ProductEntityClass } from '../product';
 import { Cart } from '../cart';
+import { render } from 'creditcardpayments/creditCardPayments';
 
 @Component({
   selector: 'app-cart',
@@ -14,7 +15,21 @@ export class CartComponent implements OnInit {
 
   constructor(private Activatedroute:ActivatedRoute, 
     private router:Router,
-    private cartService:CartService) { }
+    private cartService:CartService,
+    ) {
+
+      render(
+        {
+          id: "#paypal",
+          currency: "CDN",
+          value: "100.00",
+          onApprove: (details) => {
+            alert("Transaction Successful");
+          }
+        }
+      );
+
+     }
 
     products: any;
     product: any;
@@ -52,7 +67,7 @@ export class CartComponent implements OnInit {
 
   this.total = this.sum+this.taxes;
 
-  console.log("Sum of articles "+ this.sum);
+  // console.log("Sum of articles "+ this.sum);
   document.getElementById('sumText').innerHTML = this.sum.toFixed(2) + ' $';
   document.getElementById('taxText').innerHTML = this.taxes.toFixed(2)+ ' $';
   document.getElementById('totText').innerHTML = this.total.toFixed(2)+ ' $'; 
@@ -60,7 +75,9 @@ export class CartComponent implements OnInit {
  }
 
  public checkout():void{
-  alert("Sum of articles "+ this.sum.toFixed(2) + "\ntaxes: " + this.taxes.toFixed(2)+ "\ntotal: "+ this.total.toFixed(2));
+  // alert("Sum of articles "+ this.sum.toFixed(2) + "\ntaxes: " + this.taxes.toFixed(2)+ "\ntotal: "+ this.total.toFixed(2));
+
+
  }
 
 

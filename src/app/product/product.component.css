@@ -125,4 +125,11 @@ body{margin-top:20px;
       background-color: lightgray;
     }
 
+    .nab_btn3{
+      text-decoration: none;
+      display: inline-block;
+      background-color: #1f75fe;
+      color: white;
+    }
+
     
