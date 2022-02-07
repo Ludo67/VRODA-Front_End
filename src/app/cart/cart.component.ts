@@ -21,7 +21,7 @@ export class CartComponent implements OnInit {
       render(
         {
           id: "#paypal",
-          currency: "CDN",
+          currency: "CAD",
           value: "100.00",
           onApprove: (details) => {
             alert("Transaction Successful");
