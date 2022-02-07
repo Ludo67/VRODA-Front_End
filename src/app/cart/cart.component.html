@@ -40,12 +40,16 @@
      <h4 class="tot" id="totText"></h4>
 
 
-   <!-- <img src="./paypal.png" class="picture" id="checkout" (click)="checkout()"> -->
+   <img  class="picture" src="./paypal.png" id="checkout" (click)="render()">
 
    
     <div id="paypal"></div>
     <div *ng-init="calculateAmount(products)" class="invisible"></div>
-     <!-- <input type="submit" class="checkout" id="checkout" (click)="checkout()"> -->
+
+    <!-- <div *ng-init="checkout()" class="invisible"></div> -->
+    <!-- <input type="submit" class="checkout" value="Checkout" id="checkout" (click)="render()">  -->
+
+     
 
     <!-- <div *ngFor="let product of products;let indexOfelement=index;">${{product.price[0]}}+=${{product.price[1]}}</div> -->
 

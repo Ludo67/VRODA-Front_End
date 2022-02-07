@@ -122,8 +122,19 @@ body{margin-top:20px;
       justify-content:right; */
       margin-top: -80px;
       width: 150px;
-      margin-left: 750px;
+      margin-left: 700px;
     }
+
+    #checkout{
+        height: 50px;
+        width: 200px;
+        /* align-items: center;
+        justify-content:center; */
+        margin-top: -120px;
+        margin-left: 700px;
+
+    }
+    
     
     .picture{
         width: 350px;

@@ -5,6 +5,7 @@ import { CartService } from '../cart.service';
 import { ProductEntity,ProductEntityClass } from '../product';
 import { Cart } from '../cart';
 import { render } from 'creditcardpayments/creditCardPayments';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-cart',
@@ -18,16 +19,16 @@ export class CartComponent implements OnInit {
     private cartService:CartService,
     ) {
 
-      render(
-        {
-          id: "#paypal",
-          currency: "CAD",
-          value: "100.00",
-          onApprove: (details) => {
-            alert("Transaction Successful");
-          }
-        }
-      );
+      // render(
+      //   {
+      //     id: "#paypal",
+      //     currency: "CAD",
+      //     value: "100.00",
+      //     onApprove: (details) => {
+      //       alert("Transaction Successful");
+      //     }
+      //   }
+      // );
 
      }
 
@@ -37,7 +38,9 @@ export class CartComponent implements OnInit {
 
     ngOnInit(){
       this.getCartProduct();
+      //this.render();
   }
+
 
   public getCartProduct(): void{
 
@@ -50,9 +53,7 @@ export class CartComponent implements OnInit {
       (error: HttpErrorResponse)=>{
         alert (error.message);
       }
-      );
-
-      
+      );  
   }
 
   sum !: number;
@@ -74,11 +75,29 @@ export class CartComponent implements OnInit {
  
  }
 
- public checkout():void{
-  // alert("Sum of articles "+ this.sum.toFixed(2) + "\ntaxes: " + this.taxes.toFixed(2)+ "\ntotal: "+ this.total.toFixed(2));
+ public render():void{
+   let totalVal:string;
+
+   let button =document.getElementById('checkout');
+   button.style.display ='none';
+
+   totalVal= document.getElementById('totText').innerHTML.substring(0,6);
+  //  alert(totalVal);
+
+    render(
+    {
+      id: "#paypal",
+      currency: "CAD",
+      value: totalVal,
+      onApprove: (details:any) => {
+        alert("Transaction Successful");
+      }
+    }
+  );
+
+}
 
 
- }
 
 
   public deleteCartProductById(product_id: string): void{
