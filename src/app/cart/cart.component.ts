@@ -4,6 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CartService } from '../cart.service';
 import { ProductEntity,ProductEntityClass } from '../product';
 import { Cart } from '../cart';
+import { render } from 'creditcardpayments/creditCardPayments';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-cart',
@@ -14,7 +16,21 @@ export class CartComponent implements OnInit {
 
   constructor(private Activatedroute:ActivatedRoute, 
     private router:Router,
-    private cartService:CartService) { }
+    private cartService:CartService,
+    ) {
+
+      // render(
+      //   {
+      //     id: "#paypal",
+      //     currency: "CAD",
+      //     value: "100.00",
+      //     onApprove: (details) => {
+      //       alert("Transaction Successful");
+      //     }
+      //   }
+      // );
+
+     }
 
     products: any;
     product: any;
@@ -22,7 +38,9 @@ export class CartComponent implements OnInit {
 
     ngOnInit(){
       this.getCartProduct();
+      //this.render();
   }
+
 
   public getCartProduct(): void{
 
@@ -35,13 +53,12 @@ export class CartComponent implements OnInit {
       (error: HttpErrorResponse)=>{
         alert (error.message);
       }
-      );
-
-      
+      );  
   }
 
   sum !: number;
   taxes !: number;
+  delivery !: number;
   total !: number;
 
  public calculateAmount(products: ProductEntityClass[]): void{
@@ -50,18 +67,62 @@ export class CartComponent implements OnInit {
 
   this.taxes = this.sum* 0.15;
 
-  this.total = this.sum+this.taxes;
+  var e = (document.getElementById("delivery") as HTMLSelectElement).value;
+  console.log("Delivery Option:"+e);
 
-  console.log("Sum of articles "+ this.sum);
+  switch(e){
+    case ("Free"):{
+      this.delivery = 0;
+      break;
+    }
+    case ("Plus"):{
+      this.delivery = 5;
+      break;
+    }
+    case ("Express"):{
+      this.delivery = 15;
+      break;
+    }
+    default:{
+
+      break;
+    }
+  }
+
+
+  this.total = this.sum+this.taxes+ this.delivery;
+
+  // console.log("Sum of articles "+ this.sum);
   document.getElementById('sumText').innerHTML = this.sum.toFixed(2) + ' $';
   document.getElementById('taxText').innerHTML = this.taxes.toFixed(2)+ ' $';
   document.getElementById('totText').innerHTML = this.total.toFixed(2)+ ' $'; 
  
  }
 
- public checkout():void{
-  alert("Sum of articles "+ this.sum.toFixed(2) + "\ntaxes: " + this.taxes.toFixed(2)+ "\ntotal: "+ this.total.toFixed(2));
- }
+
+ public render():void{
+   let totalVal:string;
+
+   let button =document.getElementById('checkout');
+   button.style.display ='none';
+
+   totalVal= document.getElementById('totText').innerHTML.substring(0,6);
+  //  alert(totalVal);
+
+    render(
+    {
+      id: "#paypal",
+      currency: "CAD",
+      value: totalVal,
+      onApprove: (details:any) => {
+        alert("Transaction Successful");
+      }
+    }
+  );
+
+}
+
+
 
 
   public deleteCartProductById(product_id: string): void{

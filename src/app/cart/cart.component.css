@@ -16,6 +16,8 @@ body{margin-top:20px;
         display:flex;
         flex-direction: row;
         justify-content: center;
+        /* width:500px;
+        height:300px; */
     }
 
     .smolcontainer{
@@ -85,6 +87,12 @@ body{margin-top:20px;
       margin-bottom: 20px ;
       color: #2b2f3e;
     }
+
+    .invisible {
+      visibility: hidden;
+      position: absolute;
+      top: -9999px;
+  }
     
     .quantity {
       text-align: center;
@@ -105,17 +113,22 @@ body{margin-top:20px;
       color: white;
     }
 
-    #checkout{
-      background-image: url('./paypal.png');
-      height: 50px;
-      width: 200px;
-      align-items: right;
-      display: flex;
-      justify-content:right;
-      margin-top: -300px;
-      margin-left: 900px;
-      border-radius: 25px;
+    #paypal{
+      margin-top: -130px;
+      width: 150px;
+      margin-left: 750px;
     }
+
+    #checkout{
+      background-image: url("paypal.png");
+        height: 50px;
+        width: 200px;
+        margin-top: -220px;
+        margin-left: 750px;
+        border-radius: 12px;
+
+    }
+    
     
     .picture{
         width: 350px;
@@ -146,11 +159,31 @@ body{margin-top:20px;
       background-color: lightgray;
     }
 
-    #totLine{
-      border: 0;
-      border-top: 2px solid black;
-      width: 100px;
-      margin: 0;
+    #tax{
+      margin-left: 150px;
+      margin-top: -80px;
     }
+    #taxText{
+      margin-left: 150px;
+    }
+
+    #tot{
+      margin-left: 500px;
+      margin-top: -60px;
+    }
+
+    #totText{
+      margin-left: 500px;
+    }
+
+    #deliveryTxt{
+      margin-left: 300px;
+      margin-top: -80px;
+    }
+
+    #delivery{
+      margin-left: 300px;
+    }
+
 
     
