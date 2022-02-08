@@ -129,6 +129,11 @@ body{margin-top:20px;
 
     }
     
+    select{
+      background-color:white;
+      color:black;
+      border:1px;
+    }
     
     .picture{
         width: 350px;

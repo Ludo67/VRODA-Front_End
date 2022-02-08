@@ -52,6 +52,12 @@ public sortItems(products: ProductEntity[]):void{
       products.sort((a,b) => a.title > b.title ? -1: 1);
       break;
     }
+
+    case ("noFilter"):{
+      this.getProducts();
+      break;
+    }
+
     default:{
 
       break;
