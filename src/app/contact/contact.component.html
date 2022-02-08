@@ -14,6 +14,6 @@
         <small *ngIf="pform.get('message').touched && pform.get('message').invalid" class="text-danger">Message is required (20 characters min.)</small>
       </div>
     
-    <button type="submit" id="submit" [disabled]="pform.invalid" class="btn btn-primary submit" (click)="ValidateEmail()">Send Email</button>
+    <button type="submit" id="submit" [disabled]="pform.invalid" class="btn btn-primary submit" >Send Email</button>
   </div>  
   </form>

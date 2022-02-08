@@ -30,6 +30,37 @@ public getProducts(): void{
     );
 }
 
+public sortItems(products: ProductEntity[]):void{
+
+  var e = (document.getElementById("filter") as HTMLSelectElement).value;
+  console.log("Filter Option:"+e);
+
+  switch(e){
+    case ("priceAsc"):{
+      products.sort((a,b) => a.price < b.price ? -1: 1);
+      break;
+    }
+    case ("priceDsc"):{
+      products.sort((a,b) => a.price > b.price ? -1: 1);
+      break;
+    }
+    case ("nameAsc"):{
+      products.sort((a,b) => a.title < b.title ? -1: 1);
+      break;
+    }
+    case ("nameDsc"):{
+      products.sort((a,b) => a.title > b.title ? -1: 1);
+      break;
+    }
+    default:{
+
+      break;
+    }
+  }
+
+  
+}
+
     // @Input() totalRecords = 100;  
     // @Input() recordsPerPage = 10;  
   
