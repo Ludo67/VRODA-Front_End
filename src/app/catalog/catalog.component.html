@@ -9,7 +9,7 @@
         <div class="product tumbnail thumbnail-3"><a [routerLink]="['/products', product.productId]"><img src="data:image/png;base64,{{product.image}}" class="picture" ></a>
           <!--<div class="product tumbnail thumbnail-3"><a (click)="getProductById(product.productId)"><img src="https://via.placeholder.com/350x280/FFB6C1/000000" alt="" class="picture"></a>-->
           <div class="caption">
-            <h3><a href="#">{{product.title}}</a></h3>
+            <h3><a [routerLink]="['/products', product.productId]">{{product.title}}</a></h3>
             <!--<span class="price">${{product.price}}</span>
             <br>
             <span class="quantity">{{product.quantity}}</span>-->
@@ -20,6 +20,18 @@
         <hr>
       </div>
       </div>
+
+          <!-- <nav aria-label="page navigation example">  
+      <ul class="pagination">  
+        <li class="page-item" (click)="onClickPage(activePage - 1)"><a class="page-link" href="javascript:void(0);">«  
+            Previous</a></li>  
+        <li class="page-item" [ngClass]="{'active': activePage === item}" *ngFor="let item of pages"  
+          (click)="onClickPage(item)"><a class="page-link" href="javascript:void(0);">{{item}}</a></li>  
+        <li class="page-item" (click)="onClickPage(activePage + 1)"><a class="page-link" href="javascript:void(0);">Next  
+            »</a></li>  
+      </ul>  
+    </nav>  
+       -->
     </div>
   </div>
 </div>

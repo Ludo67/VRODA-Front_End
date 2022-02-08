@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input, OnChanges , Output , EventEmitter } from '@angular/core';
 import { ProductEntity } from '../product';
 import { ProductService } from '../product.service';
 
@@ -12,6 +12,7 @@ export class CatalogComponent implements OnInit {
 
   public products: ProductEntity[] =[];
   public product!: ProductEntity;
+  
   constructor(private productService: ProductService) { }
 
   ngOnInit(){
@@ -28,41 +29,52 @@ public getProducts(): void{
     }
     );
 }
-/*
-public getProductById(product_id: string): void{
 
-  this.productService.getByProductId(product_id).subscribe(
-    (response:Product)=>{
-      this.product=response;
-      alert("Product ID: " + this.product.productId +
-      "\nCategory ID: " + this.product.categoryId +
-      "\nTitle: " + this.product.title +
-      "\nPrice: " + this.product.price +
-      "\nQuantity: " + this.product.quantity +
-      "\nDescription: " + this.product.description)
-    },
-    (error: HttpErrorResponse)=>{
-      alert(error.message);
-    }
-  )
+    // @Input() totalRecords = 100;  
+    // @Input() recordsPerPage = 10;  
+  
+    // @Output() onPageChange: EventEmitter<number> = new EventEmitter();  
+  
+    // public pages: number [] = [];  
+    // activePage !: number;  
+  
+    // ngOnChanges(): any {  
+    //   // const pageCount = this.getPageCount();  
+    //   // this.pages = this.getArrayOfPage(pageCount);  
+    //   this.activePage = 1;  
+    //   this.onPageChange.emit(1);  
+    // }  
+  
+    // private  getPageCount(): number {  
+    //   let totalPage = 0;  
+  
+    //   if (this.totalRecords > 0 && this.recordsPerPage > 0) {  
+    //     const pageCount = this.totalRecords / this.recordsPerPage;  
+    //     const roundedPageCount = Math.floor(pageCount);  
+  
+    //     totalPage = roundedPageCount < pageCount ? roundedPageCount + 1 : roundedPageCount;  
+    //   }  
+  
+    //   return totalPage;  
+    // }  
+  
+    // private getArrayOfPage(pageCount: number): number [] {  
+    //   const pageArray = [];  
+  
+    //   if (pageCount > 0) {  
+    //       for(let i = 1 ; i <= pageCount ; i++) {  
+    //         pageArray.push(i);  
+    //       }  
+    //   }  
+  
+    //   return pageArray;  
+    // }  
+  
+    // onClickPage(pageNumber: number): void {  
+    //     if (pageNumber >= 1 && pageNumber <= this.pages.length) {  
+    //         this.activePage = pageNumber;  
+    //         this.onPageChange.emit(this.activePage);  
+    //     }  
+    // } 
 
- 
-}
-
-public deleteProductById(product_id: string): void{
-    
-  alert("Deleted Product Id is " + product_id);
-  this.productService.deleteProduct(product_id).subscribe(
-    (response: void) =>{
-      this.refresh();
-    },
-    (error: HttpErrorResponse)=>{
-      alert (error.message);
-    }
-    );
-}
-refresh(): void {
-  window.location.reload();
-}
-*/
 }

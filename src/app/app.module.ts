@@ -19,6 +19,7 @@ import { CartComponent } from './cart/cart.component';
 import { ContactComponent } from './contact/contact.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,7 @@ import { ContactComponent } from './contact/contact.component';
     MatToolbarModule,
     MatButtonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
 
   ],
   providers: [ProductService],

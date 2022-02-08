@@ -21,4 +21,5 @@ describe('CatalogComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
 });

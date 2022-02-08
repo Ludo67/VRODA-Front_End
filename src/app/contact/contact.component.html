@@ -7,12 +7,13 @@
         <input type="text" formControlName="email" class="form-control" id="email" placeholder="Email">
         <small *ngIf="pform.get('email').touched && pform.get('email').invalid" class="text-danger">Email is required</small>
       </div>
+      <h4 class="emailError" id="emailError"></h4>
       <div class="form-group col-md-6">
         <label for="message">Message</label>
         <textarea formControlName="message" class="form-control" id="message" rows="3" required minlength="20" placeholder="Enter Message (20 characters min.)"></textarea>
         <small *ngIf="pform.get('message').touched && pform.get('message').invalid" class="text-danger">Message is required (20 characters min.)</small>
       </div>
     
-    <button type="submit" id="submit" [disabled]="pform.invalid" class="btn btn-primary submit">Send Email</button>
+    <button type="submit" id="submit" [disabled]="pform.invalid" class="btn btn-primary submit" (click)="ValidateEmail()">Send Email</button>
   </div>  
   </form>
