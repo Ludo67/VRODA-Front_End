@@ -6,6 +6,7 @@ import { ProductComponent } from './product/product.component';
 import { ProductsearchComponent } from './productsearch/productsearch.component';
 import { UpdateProductFormComponent } from './update-product-form/update-product-form.component';
 import { CartComponent } from './cart/cart.component';
+import { ContactComponent } from './contact/contact.component';
 const routes: Routes = [
   //{path: "", component: NavbarComponent},
   {path: 'home', component: CatalogComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path: 'products/title/:title', component: ProductsearchComponent},
   {path: 'addProduct', component: AddformComponent},
   {path: 'home/addProduct', component: AddformComponent},
-  {path: '', component: CatalogComponent}
+  {path: '', component: CatalogComponent},
+  {path: 'contact', component: ContactComponent}
 ];
 
 @NgModule({

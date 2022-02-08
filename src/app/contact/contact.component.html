@@ -1,0 +1,18 @@
+<form (ngSubmit) = "onSubmit()" [formGroup]="pform">
+    <h1>Contact Form</h1>
+    <div class="wrapper">
+  
+      <div class="form-group col-md-6">
+        <label for="email">Email</label>
+        <input type="text" formControlName="email" class="form-control" id="email" placeholder="Email">
+        <small *ngIf="pform.get('email').touched && pform.get('email').invalid" class="text-danger">Email is required</small>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="message">Message</label>
+        <textarea formControlName="message" class="form-control" id="message" rows="3" required minlength="20" placeholder="Enter Message (20 characters min.)"></textarea>
+        <small *ngIf="pform.get('message').touched && pform.get('message').invalid" class="text-danger">Message is required (20 characters min.)</small>
+      </div>
+    
+    <button type="submit" id="submit" [disabled]="pform.invalid" class="btn btn-primary submit">Send Email</button>
+  </div>  
+  </form>

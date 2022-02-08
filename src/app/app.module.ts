@@ -16,6 +16,7 @@ import { ProductComponent } from './product/product.component';
 import { ProductsearchComponent } from './productsearch/productsearch.component';
 import { UpdateProductFormComponent } from './update-product-form/update-product-form.component';
 import { CartComponent } from './cart/cart.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { CartComponent } from './cart/cart.component';
     ProductComponent,
     ProductsearchComponent,
     UpdateProductFormComponent,
-    CartComponent
+    CartComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
