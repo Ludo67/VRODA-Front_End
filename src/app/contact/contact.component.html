@@ -1,19 +1,19 @@
-<form (ngSubmit) = "onSubmit()" [formGroup]="pform">
+<div class="container">
     <h1>Contact Form</h1>
-    <div class="wrapper">
-  
-      <div class="form-group col-md-6">
-        <label for="email">Email</label>
-        <input type="text" formControlName="email" class="form-control" id="email" placeholder="Email">
-        <small *ngIf="pform.get('email').touched && pform.get('email').invalid" class="text-danger">Email is required</small>
+    <form  action="https://formsubmit.co/ludovico007007@gmail.com" method="POST">
+      <div class="form-group">
+        <div class="form-row">
+          <div class="col">
+            <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+          </div>
+          <div class="col">
+            <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+          </div>
+        </div>
       </div>
-      <h4 class="emailError" id="emailError"></h4>
-      <div class="form-group col-md-6">
-        <label for="message">Message</label>
-        <textarea formControlName="message" class="form-control" id="message" rows="3" required minlength="20" placeholder="Enter Message (20 characters min.)"></textarea>
-        <small *ngIf="pform.get('message').touched && pform.get('message').invalid" class="text-danger">Message is required (20 characters min.)</small>
+      <div class="form-group">
+        <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
       </div>
-    
-    <button type="submit" id="submit" [disabled]="pform.invalid" class="btn btn-primary submit" >Send Email</button>
-  </div>  
-  </form>
+      <button type="submit" class="btn btn-lg btn-dark btn-block">Send Email</button>
+    </form>
+</div>
