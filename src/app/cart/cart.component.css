@@ -108,6 +108,8 @@ body{margin-top:20px;
       display: inline-block;
     }
 
+    
+
     #delete{
       background-color: #dc143c;
       color: white;
@@ -142,6 +144,11 @@ body{margin-top:20px;
     .container{
       margin-top: 20px;
     }
+
+    .containerEmail{
+      margin-top: 150px;
+    }
+
 
     .catalog{
       font-size: 28px;
@@ -188,6 +195,13 @@ body{margin-top:20px;
 
     #delivery{
       margin-left: 300px;
+    }
+
+    .nab_btn4{
+      color: white;
+      background-color:#1f75fe;
+      border-radius: 5px;
+      border-style: none;
     }
 
 
