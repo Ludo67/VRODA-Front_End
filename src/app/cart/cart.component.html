@@ -39,9 +39,9 @@
 
      <h4 class="deliveryTxt" id="deliveryTxt"><b>Delivery Options</b></h4>
      <select name="delivery" id="delivery" (change)="calculateAmount(products)">
-        <option value="Free">Free</option>
-        <option value="Plus">Plus (5$)</option>
-        <option value="Express">Express (15$)</option>
+        <option id="Free" value="Free">Free</option>
+        <option id="Plus" value="Plus">Plus (5$)</option>
+        <option id="Express" value="Express">Express (15$)</option>
       </select>
 
      <h4 class="tot" id="tot"><b>Total ($)</b></h4>
@@ -57,7 +57,7 @@
     <div *ng-init="calculateAmount(products)" class="invisible"></div>
 
 
-    <div class="containerEmail">
+    <!-- <div class="containerEmail">
         <h4>Receive Email for your order</h4>
         <form  action="https://formsubmit.co/ludovico007007@gmail.com" method="POST">
           <div class="form-group">
@@ -71,7 +71,8 @@
           </div>
           <button type="submit" class="nab_btn4">Confirm</button>
         </form>
-      </div>
+      </div> -->
+
     <!-- <div *ng-init="checkout()" class="invisible"></div> -->
      <!-- <input type="submit" class="message" value="message" id="message" (click)="messageFunc(products)">  --> 
 

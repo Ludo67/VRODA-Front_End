@@ -3,11 +3,11 @@
     <hr>
     <div class="wrapper">
       <select name="filter" id="filter" (change)="sortItems(products)">
-        <option value="noFilter">No Filter</option>
-        <option value="priceAsc">Price &#8593;</option>
-        <option value="priceDsc">Price &#8595;</option>
-        <option value="nameAsc">Name (A-Z)</option>
-        <option value="nameDsc">Name (Z-A)</option>
+        <option id="noFilter" value="noFilter">No Filter</option>
+        <option id="priceAsc" value="priceAsc">Price &#8593;</option>
+        <option id="priceDsc" value="priceDsc">Price &#8595;</option>
+        <option id="nameAsc" value="nameAsc">Name (A-Z)</option>
+        <option id="nameDsc" value="nameDsc">Name (Z-A)</option>
       </select>
     <a mat-button routerLink="addProduct" class="nab_btn">Add Product</a>
     <div class="row flow-offset-1 text-center">
