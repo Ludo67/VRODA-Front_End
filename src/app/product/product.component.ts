@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../product.service';
 import { CartService } from '../cart.service';
 import { ProductEntity } from '../product';
+import { TokenStorageService } from '../_services/token-storage.service';
 
 
 @Component({
@@ -16,14 +17,22 @@ export class ProductComponent implements OnInit {
   constructor(private Activatedroute:ActivatedRoute, 
               private router:Router,
               private productService:ProductService,
-              private cartService:CartService) { }
+              private cartService:CartService,
+              private tokenStorageService: TokenStorageService) { }
 
+  roles!: string;
+  isLoggedIn = false;
   sub: any;
   id: any;
   product: any;
   productt: any;
 
   ngOnInit(): void {
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+      this.roles = user.roles.toString();
+}
     this.sub = this.Activatedroute.paramMap.subscribe(params => {
       this.id = params.get('id');
       this.getProductById(this.id);

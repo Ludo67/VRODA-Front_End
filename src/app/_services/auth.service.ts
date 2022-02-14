@@ -9,6 +9,10 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthService {
+
+  isLogin = false;
+  roleAs!: string;
+  
   constructor(private http: HttpClient) { }
   login(credentials: { username: any; password: any; }): Observable<any> {
     return this.http.post(AUTH_API + 'signin', {
@@ -28,14 +32,6 @@ export class AuthService {
       refreshToken: token
     }, httpOptions);
   }
-
-
-  isLogin = false;
-    
-  roleAs!: string;
-//Need to parse an array as string
-//And check if the string contains roles
-//Will have to change visibility based on role for AddProduct and UpdateProduct
 
   loginConfirmed(value: string) {
     this.isLogin = true;

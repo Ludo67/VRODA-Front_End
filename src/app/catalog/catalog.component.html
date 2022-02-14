@@ -2,7 +2,7 @@
     <h1 class="text-center text-muted catalog">VRODA Catalog</h1>
     <hr>
     <div class="wrapper">
-    <a mat-button routerLink="addProduct" class="nab_btn">Add Product</a>
+      <a mat-button routerLink="addProduct" class="nab_btn"  *ngIf="isLoggedIn && roles.includes('ROLE_CLERK')">Add Product</a>
     <div class="row flow-offset-1 text-center">
       <div *ngFor="let product of products" class="col-xs-6 col-md-4 " fxLayout="row" fxLayoutAlign="space-around center"> 
         <div class="container">

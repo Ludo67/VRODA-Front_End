@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ProductEntity } from '../product';
 import { ProductService } from '../product.service';
+import { TokenStorageService } from '../_services/token-storage.service';
 
 @Component({
   selector: 'app-catalog',
@@ -10,12 +11,20 @@ import { ProductService } from '../product.service';
 })
 export class CatalogComponent implements OnInit {
 
+  roles!: string;
+  isLoggedIn = false;
   public products: ProductEntity[] =[];
   public product!: ProductEntity;
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService,
+    private tokenStorageService: TokenStorageService) { }
 
-  ngOnInit(){
-    this.getProducts();
+    ngOnInit(): void {
+      this.isLoggedIn = !!this.tokenStorageService.getToken();
+      if (this.isLoggedIn) {
+        const user = this.tokenStorageService.getUser();
+        this.roles = user.roles.toString();
+  }
+  this.getProducts();
 }
 
 public getProducts(): void{
