@@ -16,7 +16,9 @@ import { ProductComponent } from './product/product.component';
 import { ProductsearchComponent } from './productsearch/productsearch.component';
 import { UpdateProductFormComponent } from './update-product-form/update-product-form.component';
 import { CartComponent } from './cart/cart.component';
-
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { authInterceptorProviders } from './_services/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { CartComponent } from './cart/cart.component';
     ProductComponent,
     ProductsearchComponent,
     UpdateProductFormComponent,
-    CartComponent
+    CartComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +44,7 @@ import { CartComponent } from './cart/cart.component';
     ReactiveFormsModule
 
   ],
-  providers: [ProductService],
+  providers: [ProductService, authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
