@@ -31,7 +31,7 @@ import { authInterceptorProviders } from './_services/auth.interceptor';
     ProductsearchComponent,
     UpdateProductFormComponent,
     CartComponent,
-    ContactComponent
+    ContactComponent,
     RegisterComponent,
     LoginComponent
   ],

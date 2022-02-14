@@ -25,7 +25,7 @@ const routes: Routes = [
   {path: 'addProduct', component: AddformComponent},
   {path: 'home/addProduct', component: AddformComponent},
   {path: '', component: CatalogComponent},
-  {path: 'contact', component: ContactComponent}
+  {path: 'contact', component: ContactComponent},
   {path: 'addProduct', component: AddformComponent,
   canActivate: [AuthGuard],
     data: {

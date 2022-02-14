@@ -16,7 +16,6 @@ export class CatalogComponent implements OnInit {
   public products: ProductEntity[] =[];
   public product!: ProductEntity;
   
-  constructor(private productService: ProductService) { }
   constructor(private productService: ProductService,
     private tokenStorageService: TokenStorageService) { }
 
