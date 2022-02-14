@@ -26,8 +26,8 @@
     </div>
  
     <hr>
-    <a mat-button (click)="deleteProductById(product.productId)" class="nab_btn2" id="delete">Delete</a> &nbsp;
-    <a mat-button (click)="updateProduct(product.productId, product.categoryId)" class="nab_btn2" id="update">Update</a>&nbsp;
+    <a mat-button (click)="deleteProductById(product.productId)" class="nab_btn2" *ngIf="isLoggedIn && roles.includes('ROLE_CLERK')" id="delete">Delete</a> &nbsp;
+    <a mat-button (click)="updateProduct(product.productId, product.categoryId)" *ngIf="isLoggedIn && roles.includes('ROLE_CLERK')" class="nab_btn2" id="update">Update</a>&nbsp;
 
     <a mat-button (click)="addToCart(product)" class="nab_btn3" id="addToCart">Add To Cart</a>
     <img class="{{product.image}}"/>

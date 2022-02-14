@@ -7,18 +7,36 @@ import { ProductsearchComponent } from './productsearch/productsearch.component'
 import { UpdateProductFormComponent } from './update-product-form/update-product-form.component';
 import { CartComponent } from './cart/cart.component';
 import { ContactComponent } from './contact/contact.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { AuthGuard } from './_services/auth.guard';
+
 const routes: Routes = [
-  //{path: "", component: NavbarComponent},
   {path: 'home', component: CatalogComponent},
-  {path: 'account', component: CatalogComponent},
   {path: 'cart', component: CartComponent},
   {path: 'products/:id', component: ProductComponent},
-  {path: 'products/update/:id/:id2', component: UpdateProductFormComponent},
+  {path: 'products/update/:id/:id2', component: UpdateProductFormComponent,
+  canActivate: [AuthGuard],
+    data: {
+      role: 'ROLE_CLERK'
+    }
+  },
   {path: 'products/title/:title', component: ProductsearchComponent},
   {path: 'addProduct', component: AddformComponent},
   {path: 'home/addProduct', component: AddformComponent},
   {path: '', component: CatalogComponent},
   {path: 'contact', component: ContactComponent}
+  {path: 'addProduct', component: AddformComponent,
+  canActivate: [AuthGuard],
+    data: {
+      role: 'ROLE_CLERK'
+    }
+  },
+  {path: 'home/addProduct', redirectTo: '/addProduct', pathMatch: 'full' },
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
+  {path: '', redirectTo: '/home', pathMatch: 'full' },
+
 ];
 
 @NgModule({
