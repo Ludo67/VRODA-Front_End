@@ -16,6 +16,7 @@ import { ProductComponent } from './product/product.component';
 import { ProductsearchComponent } from './productsearch/productsearch.component';
 import { UpdateProductFormComponent } from './update-product-form/update-product-form.component';
 import { CartComponent } from './cart/cart.component';
+import { ContactComponent } from './contact/contact.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { authInterceptorProviders } from './_services/auth.interceptor';
@@ -30,6 +31,7 @@ import { authInterceptorProviders } from './_services/auth.interceptor';
     ProductsearchComponent,
     UpdateProductFormComponent,
     CartComponent,
+    ContactComponent
     RegisterComponent,
     LoginComponent
   ],
@@ -41,7 +43,7 @@ import { authInterceptorProviders } from './_services/auth.interceptor';
     MatToolbarModule,
     MatButtonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
 
   ],
   providers: [ProductService, authInterceptorProviders],

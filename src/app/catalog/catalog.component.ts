@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input, OnChanges , Output , EventEmitter } from '@angular/core';
 import { ProductEntity } from '../product';
 import { ProductService } from '../product.service';
 import { TokenStorageService } from '../_services/token-storage.service';
@@ -15,6 +15,8 @@ export class CatalogComponent implements OnInit {
   isLoggedIn = false;
   public products: ProductEntity[] =[];
   public product!: ProductEntity;
+  
+  constructor(private productService: ProductService) { }
   constructor(private productService: ProductService,
     private tokenStorageService: TokenStorageService) { }
 
@@ -37,41 +39,42 @@ public getProducts(): void{
     }
     );
 }
-/*
-public getProductById(product_id: string): void{
 
-  this.productService.getByProductId(product_id).subscribe(
-    (response:Product)=>{
-      this.product=response;
-      alert("Product ID: " + this.product.productId +
-      "\nCategory ID: " + this.product.categoryId +
-      "\nTitle: " + this.product.title +
-      "\nPrice: " + this.product.price +
-      "\nQuantity: " + this.product.quantity +
-      "\nDescription: " + this.product.description)
-    },
-    (error: HttpErrorResponse)=>{
-      alert(error.message);
+public sortItems(products: ProductEntity[]):void{
+
+  var e = (document.getElementById("filter") as HTMLSelectElement).value;
+  console.log("Filter Option:"+e);
+
+  switch(e){
+    case ("priceAsc"):{
+      products.sort((a,b) => a.price < b.price ? -1: 1);
+      break;
     }
-  )
-
- 
-}
-
-public deleteProductById(product_id: string): void{
-    
-  alert("Deleted Product Id is " + product_id);
-  this.productService.deleteProduct(product_id).subscribe(
-    (response: void) =>{
-      this.refresh();
-    },
-    (error: HttpErrorResponse)=>{
-      alert (error.message);
+    case ("priceDsc"):{
+      products.sort((a,b) => a.price > b.price ? -1: 1);
+      break;
     }
-    );
+    case ("nameAsc"):{
+      products.sort((a,b) => a.title < b.title ? -1: 1);
+      break;
+    }
+    case ("nameDsc"):{
+      products.sort((a,b) => a.title > b.title ? -1: 1);
+      break;
+    }
+
+    case ("noFilter"):{
+      this.getProducts();
+      break;
+    }
+
+    default:{
+
+      break;
+    }
+  }
+
+  
 }
-refresh(): void {
-  window.location.reload();
-}
-*/
+
 }

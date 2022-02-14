@@ -33,6 +33,12 @@
     padding-right: 2%;
 }
 
+#search{
+    background-color: black;
+    color:white;
+    border: none;
+}
+
 .searchInput{
     width: auto;
 }

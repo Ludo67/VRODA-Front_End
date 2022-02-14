@@ -6,9 +6,11 @@ import { ProductComponent } from './product/product.component';
 import { ProductsearchComponent } from './productsearch/productsearch.component';
 import { UpdateProductFormComponent } from './update-product-form/update-product-form.component';
 import { CartComponent } from './cart/cart.component';
+import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthGuard } from './_services/auth.guard';
+
 const routes: Routes = [
   {path: 'home', component: CatalogComponent},
   {path: 'cart', component: CartComponent},
@@ -20,6 +22,10 @@ const routes: Routes = [
     }
   },
   {path: 'products/title/:title', component: ProductsearchComponent},
+  {path: 'addProduct', component: AddformComponent},
+  {path: 'home/addProduct', component: AddformComponent},
+  {path: '', component: CatalogComponent},
+  {path: 'contact', component: ContactComponent}
   {path: 'addProduct', component: AddformComponent,
   canActivate: [AuthGuard],
     data: {
@@ -33,26 +39,6 @@ const routes: Routes = [
 
 ];
 
-// const routes: Routes = [
-    
-//   { path: '', redirectTo: '/home', pathMatch: 'full' },
-//   { path: 'home', component: HomeComponent },
-//   {
-//     path: 'admin', component: AdminDashboardComponent,
-//     canActivate: [AuthGuard],
-//     data: {
-//       role: 'ROLE_ADMIN'
-//     }
-//   },
-//   { path: 'user', component: UserDashboardComponent,
-//     canActivate: [AuthGuard],
-//     data: {
-//       role: 'ROLE_USER'
-//     }
-//   },
-//   { path: '**', component: NotFoundComponent }
-
-// ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

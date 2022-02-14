@@ -60,6 +60,7 @@ export class CartComponent implements OnInit {
   taxes !: number;
   delivery !: number;
   total !: number;
+  message !: string;
 
  public calculateAmount(products: ProductEntityClass[]): void{
   
@@ -95,7 +96,7 @@ export class CartComponent implements OnInit {
   // console.log("Sum of articles "+ this.sum);
   document.getElementById('sumText').innerHTML = this.sum.toFixed(2) + ' $';
   document.getElementById('taxText').innerHTML = this.taxes.toFixed(2)+ ' $';
-  document.getElementById('totText').innerHTML = this.total.toFixed(2)+ ' $'; 
+  document.getElementById('totText').innerHTML = this.total.toFixed(2); 
  
  }
 
@@ -106,9 +107,17 @@ export class CartComponent implements OnInit {
    let button =document.getElementById('checkout');
    button.style.display ='none';
 
-   totalVal= document.getElementById('totText').innerHTML.substring(0,6);
+  //  if(Number(document.getElementById('totText').innerHTML) <100.00){
+  //   totalVal= document.getElementById('totText').innerHTML.substring(0,5);
+  //  }
+
+  //  if(Number(document.getElementById('totText').innerHTML) >= 100.00){
+  //   totalVal= document.getElementById('totText').innerHTML.substring(0,6);
+  //  }
+
   //  alert(totalVal);
 
+  totalVal= document.getElementById('totText').innerHTML;
     render(
     {
       id: "#paypal",
@@ -121,8 +130,6 @@ export class CartComponent implements OnInit {
   );
 
 }
-
-
 
 
   public deleteCartProductById(product_id: string): void{
