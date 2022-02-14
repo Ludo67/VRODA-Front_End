@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ProductService } from '../product.service';
+import { AuthService } from '../_services/auth.service';
 import { EventBusService } from '../_services/EventBusService';
 import { TokenStorageService } from '../_services/token-storage.service';
 
@@ -29,7 +30,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
     private router:Router,
     private formBuilder: FormBuilder,
     private tokenStorageService: TokenStorageService,
-    private eventBusService: EventBusService) { 
+    private eventBusService: EventBusService,
+    private authService: AuthService) { 
       this.searchForm = this.formBuilder.group({
         search: ''
       });
@@ -58,6 +60,9 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this.roles = [];
     this.showAdminBoard = false;
     this.showClerkBoard = false;
+
+    this.authService.logout();
+    
   }
 
   public Search(): void{

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 const AUTH_API = 'http://localhost:8080/api/gateway/auth/';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -27,5 +27,43 @@ export class AuthService {
     return this.http.post(AUTH_API + 'refreshToken', {
       refreshToken: token
     }, httpOptions);
+  }
+
+
+  isLogin = false;
+    
+  roleAs!: string;
+//Need to parse an array as string
+//And check if the string contains roles
+//Will have to change visibility based on role for AddProduct and UpdateProduct
+
+  loginConfirmed(value: string) {
+    this.isLogin = true;
+    this.roleAs = value;
+    localStorage.setItem('STATE', 'true');
+    localStorage.setItem('ROLE', this.roleAs.toString());
+    return of({ success: this.isLogin, role: this.roleAs });
+  }
+
+  logout() {
+    this.isLogin = false;
+    this.roleAs = '';
+    localStorage.setItem('STATE', 'false');
+    localStorage.setItem('ROLE', '');
+    return of({ success: this.isLogin, role: '' });
+  }
+
+  isLoggedIn() {
+    const loggedIn = localStorage.getItem('STATE');
+    if (loggedIn == 'true')
+      this.isLogin = true;
+    else
+      this.isLogin = false;
+    return this.isLogin;
+  }
+
+  getRole() {
+    this.roleAs = localStorage.getItem('ROLE');
+    return this.roleAs;
   }
 }
