@@ -125,12 +125,12 @@ export class CartComponent implements OnInit {
       value: totalVal,
       onApprove: (details:any) => {
         alert("Transaction Successful");
+        document.getElementById("emailSubmit").click();
       }
     }
   );
 
 }
-
 
   public deleteCartProductById(product_id: string): void{
     
