@@ -22,8 +22,6 @@ const routes: Routes = [
     }
   },
   {path: 'products/title/:title', component: ProductsearchComponent},
-  {path: 'addProduct', component: AddformComponent},
-  {path: 'home/addProduct', component: AddformComponent},
   {path: '', component: CatalogComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'addProduct', component: AddformComponent,
