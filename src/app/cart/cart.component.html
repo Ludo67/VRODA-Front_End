@@ -57,29 +57,19 @@
     <div *ng-init="calculateAmount(products)" class="invisible"></div>
 
 
-    <!-- <div class="containerEmail">
+    <div class="containerEmail">
         <h4>Receive Email for your order</h4>
         <form  action="https://formsubmit.co/ludovico007007@gmail.com" method="POST">
           <div class="form-group">
             <div class="form-row">
               <div class="col">
                 <input type="hidden" name="_subject" value="New Order - VRODA">
-                <input type="hidden" name="_autoresponse" value="You ordered at VRODA: product:{{product.title}}, quantity:{{product.quantity}} ">
+                <input type="hidden" name="_autoresponse" value="You ordered at VRODA: {{products}}">
                 <input type="email" name="email" class="textEmail" placeholder="Email Address" required>
               </div>
             </div>
           </div>
           <button type="submit" class="nab_btn4">Confirm</button>
         </form>
-      </div> -->
-
-    <!-- <div *ng-init="checkout()" class="invisible"></div> -->
-     <!-- <input type="submit" class="message" value="message" id="message" (click)="messageFunc(products)">  --> 
-
-     
-
-    <!-- <div *ngFor="let product of products;let indexOfelement=index;">${{product.price[0]}}+=${{product.price[1]}}</div> -->
-
-    <!--<a mat-button (click)="deleteProductById(product.productId)" class="nab_btn2" id="delete">Delete</a> &nbsp;
-    <a mat-button (click)="updateProduct(product.productId, product.categoryId)" class="nab_btn2" id="update">Update</a>-->
+      </div>
 </div>
