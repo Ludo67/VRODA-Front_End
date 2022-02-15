@@ -18,7 +18,7 @@ const routes: Routes = [
   {path: 'products/update/:id/:id2', component: UpdateProductFormComponent,
   canActivate: [AuthGuard],
     data: {
-      role: 'ROLE_CLERK'
+      role: 'ROLE_USER,ROLE_CLERK' || 'ROLE_CLERK,ROLE_USER' || 'ROLE_CLERK'
     }
   },
   {path: 'products/title/:title', component: ProductsearchComponent},
@@ -27,8 +27,9 @@ const routes: Routes = [
   {path: 'addProduct', component: AddformComponent,
   canActivate: [AuthGuard],
     data: {
-      role: 'ROLE_CLERK'
+      role: 'ROLE_USER,ROLE_CLERK' || 'ROLE_CLERK,ROLE_USER' || 'ROLE_CLERK'
     }
+    
   },
   {path: 'home/addProduct', redirectTo: '/addProduct', pathMatch: 'full' },
   {path: 'login', component: LoginComponent},
