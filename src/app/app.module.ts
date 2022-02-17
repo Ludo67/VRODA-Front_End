@@ -20,6 +20,7 @@ import { ContactComponent } from './contact/contact.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { authInterceptorProviders } from './_services/auth.interceptor';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { authInterceptorProviders } from './_services/auth.interceptor';
     CartComponent,
     ContactComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
