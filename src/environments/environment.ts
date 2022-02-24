@@ -2,12 +2,12 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-export const environment = {
-  production: false,
-  apiBaseUrl: 'https://vrodapp.herokuapp.com', //Product
-  apiBaseUrl2: 'https://vrodapp2.herokuapp.com', //Auth
-  apiBaseUrl3: 'https://vrodapp3.herokuapp.com' //Cart
-};
+// export const environment = {
+//   production: false,
+//   apiBaseUrl: 'https://vrodapp.herokuapp.com', //Product
+//   apiBaseUrl2: 'https://vrodapp2.herokuapp.com', //Auth
+//   apiBaseUrl3: 'https://vrodapp3.herokuapp.com' //Cart
+// };
 
 /*
  * For easier debugging in development mode, you can import the following file

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-const API_URL = 'http://localhost:8080/api/gateway/role/';
+const API_URL = 'https://vrodapp2.herokuapp.com/api/gateway/role/';
 @Injectable({
   providedIn: 'root'
 })
