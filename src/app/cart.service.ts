@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 
 export class CartService{
-    private apiUrl = environment.apiBaseUrl;
+    private apiUrl = environment.apiBaseUrl3;
 
     constructor(private http: HttpClient) {}
 

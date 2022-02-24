@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-const AUTH_API = 'http://localhost:8080/api/gateway/auth/';
+const AUTH_API = 'https://vrodapp2.herokuapp.com/api/gateway/auth/';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
