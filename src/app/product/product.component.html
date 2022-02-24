@@ -32,5 +32,8 @@
     <a mat-button (click)="addToCart(product)" class="nab_btn3" id="addToCart" i18n>Add To Cart</a>
     <img class="{{product.image}}"/>
 
-    <h4 class="addToCartText" id="addToCartText" i18n></h4>
+    <!-- <h4 class="addToCartText" id="addToCartText" i18n></h4> -->
+    <div class="alert alert-success" *ngIf="addedToCart" i18n>
+        Added To Cart
+      </div>
   </div>

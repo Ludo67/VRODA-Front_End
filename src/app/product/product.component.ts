@@ -13,7 +13,7 @@ import { TokenStorageService } from '../_services/token-storage.service';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-
+  addedToCart=false;
   constructor(private Activatedroute:ActivatedRoute, 
               private router:Router,
               private productService:ProductService,
@@ -51,8 +51,8 @@ export class ProductComponent implements OnInit {
         alert(error.message);
       }
     )
-
-    document.getElementById('addToCartText').innerHTML += '<br> Item added to Cart!';
+    this.addedToCart=true;
+    // document.getElementById('addToCartText').innerHTML += '<br> Item added to Cart!';
   }
 
   public getProductById(product_id: string): void{

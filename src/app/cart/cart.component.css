@@ -116,13 +116,13 @@ body{margin-top:20px;
     }
 
     #paypal{
-      margin-top: -130px;
+      margin-top: -50px;
       width: 150px;
       margin-left: 750px;
     }
 
     #checkout{
-      background-image: url("paypal.png");
+      /* background-image: url("paypal.png"); */
         height: 50px;
         width: 200px;
         margin-top: -220px;
