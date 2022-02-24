@@ -1,25 +1,25 @@
 <div class="container bootstrap snipets">
-    <h1 class="text-center text-muted catalog">VRODA Catalog</h1>
-    <hr>
-    <div class="wrapper">
-    <a mat-button routerLink="addProduct" class="nab_btn">Add Product</a>
-    <div class="row flow-offset-1 text-center">
-      <div *ngFor="let product of products" class="col-xs-6 col-md-4 " fxLayout="row" fxLayoutAlign="space-around center"> 
-        <div class="container">
-        <div class="product tumbnail thumbnail-3"><a [routerLink]="['/products', product.productId]"><img src="data:image/png;base64,{{product.image}}" class="picture" ></a>
-          <!--<div class="product tumbnail thumbnail-3"><a (click)="getProductById(product.productId)"><img src="https://via.placeholder.com/350x280/FFB6C1/000000" alt="" class="picture"></a>-->
-          <div class="caption">
-            <h3><a href="#">{{product.title}}</a></h3>
-            <!--<span class="price">${{product.price}}</span>
-            <br>
-            <span class="quantity">{{product.quantity}}</span>-->
-            
-          </div>
+  <h1 class="text-center text-muted catalog" i18n>VRODA Catalog</h1>
+  <hr>
+  <div class="wrapper">
+  <a mat-button routerLink="addProduct" class="nab_btn" i18n>Add Product</a>
+  <div class="row flow-offset-1 text-center">
+    <div *ngFor="let product of products" class="col-xs-6 col-md-4 " fxLayout="row" fxLayoutAlign="space-around center"> 
+      <div class="container">
+      <div class="product tumbnail thumbnail-3"><a [routerLink]="['/products', product.productId]"><img src="data:image/png;base64,{{product.image}}" class="picture" ></a>
+        <!--<div class="product tumbnail thumbnail-3"><a (click)="getProductById(product.productId)"><img src="https://via.placeholder.com/350x280/FFB6C1/000000" alt="" class="picture"></a>-->
+        <div class="caption">
+          <h3><a href="#">{{product.title}}</a></h3>
+          <!--<span class="price">${{product.price}}</span>
+          <br>
+          <span class="quantity">{{product.quantity}}</span>-->
+          
         </div>
-        <!--<a mat-button (click)="deleteProductById(product.productId)" class="nab_btn2">Delete</a>-->
-        <hr>
       </div>
-      </div>
+      <!--<a mat-button (click)="deleteProductById(product.productId)" class="nab_btn2">Delete</a>-->
+      <hr>
+    </div>
     </div>
   </div>
+</div>
 </div>

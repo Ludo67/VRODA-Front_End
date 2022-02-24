@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "Dist/vroda-web-app",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

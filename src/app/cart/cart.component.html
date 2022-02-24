@@ -1,75 +1,74 @@
-
 <div class="container bootstrap snipets" >
-    <h1 class="text-center text-muted catalog">My Cart</h1>
-    <hr>
+  <h1 class="text-center text-muted catalog" i18n>My Cart</h1>
+  <hr>
 
-    <div *ngFor="let product of products;let indexOfelement=index;">
-    <div class="wrapper">
-        
-        <img src="data:image/png;base64,{{product.image}}" class="picture" >
+  <div *ngFor="let product of products;let indexOfelement=index;">
+  <div class="wrapper">
+      
+      <img src="data:image/png;base64,{{product.image}}" class="picture" >
 
-        <div class="smolcontainer">
-        <h3 class="title">{{product.title}}</h3>
-        <br><br><br>
-        <span class="price">{{product.price}} $</span>
-        <br><br><br>
-        <!-- <span class="quantity">{{product.quantity}}</span> -->
-        
-            <input type="number" name="quantity" value="{{product.quantity}}" class="quantity" id="quantity" (change)="updateCart(product,indexOfelement+1)">
-    <br><br><br>
-        <span><a mat-button (click)="deleteCartProductById(product.productId)" id="delete" class="nab_btn2" >Delete</a>&nbsp;
-            <!-- <a mat-button (click)="updateCart(product,indexOfelement+1)" id="update" class="nab_btn2" >Update</a> -->
-             <!-- <button type="submit" id="submit" class="btn btn-primary submit">Update</button> -->
-            </span> 
-        </div>
-        <br>
-        
-        
-    </div>
-    <hr>
-    </div>
+      <div class="smolcontainer">
+      <h3 class="title">{{product.title}}</h3>
+      <br><br><br>
+      <span class="price">{{product.price}} $</span>
+      <br><br><br>
+      <!-- <span class="quantity">{{product.quantity}}</span> -->
+      
+          <input type="number" name="quantity" value="{{product.quantity}}" class="quantity" id="quantity" (change)="updateCart(product,indexOfelement+1)">
+  <br><br><br>
+      <span><a mat-button (click)="deleteCartProductById(product.productId)" id="delete" class="nab_btn2" i18n>Delete</a>&nbsp;
+          <!-- <a mat-button (click)="updateCart(product,indexOfelement+1)" id="update" class="nab_btn2" >Update</a> -->
+           <!-- <button type="submit" id="submit" class="btn btn-primary submit">Update</button> -->
+          </span> 
+      </div>
+      <br>
+      
+      
+  </div>
+  <hr>
+  </div>
 
-    <!-- <input type="submit" name="sum" value="sum" class="sum" id="sum" (click)="calculateAmount(products)"> -->
-     
-
-     <h4 class="sum" id="sum"><b>Subtotal</b></h4>
-     <h4 class="sum" id="sumText"></h4>
-     <h4 class="tax" id="tax"><b>Taxes</b></h4>
-     <h4 class="tax" id="taxText"></h4>
-
-     <h4 class="deliveryTxt" id="deliveryTxt"><b>Delivery Options</b></h4>
-     <select name="delivery" id="delivery" (change)="calculateAmount(products)">
-        <option id="Free" value="Free">Free</option>
-        <option id="Plus" value="Plus">Plus (5$)</option>
-        <option id="Express" value="Express">Express (15$)</option>
-      </select>
-
-     <h4 class="tot" id="tot"><b>Total ($)</b></h4>
-     <h4 class="tot" id="totText"></h4>
-
-     <h5><b><u>(Note)</u>: If you want to change your cart after having <br> clicked the checkout with PayPal button. Please reload the page</b></h5>
-
-
-   <img  class="picture" src="./paypal.png" id="checkout" (click)="render()">
-
+  <!-- <input type="submit" name="sum" value="sum" class="sum" id="sum" (click)="calculateAmount(products)"> -->
    
-    <div id="paypal"></div>
-    <div *ng-init="calculateAmount(products)" class="invisible"></div>
+
+   <h4 class="sum" id="sum" i18n><b>Subtotal</b></h4>
+   <h4 class="sum" id="sumText"></h4>
+   <h4 class="tax" id="tax" i18n><b>Taxes</b></h4>
+   <h4 class="tax" id="taxText"></h4>
+
+   <h4 class="deliveryTxt" id="deliveryTxt" i18n><b>Delivery Options</b></h4>
+   <select i18n name="delivery" id="delivery" (change)="calculateAmount(products)">
+      <option id="Free" value="Free">Free</option>
+      <option id="Plus" value="Plus">Plus (5$)</option>
+      <option id="Express" value="Express">Express (15$)</option>
+    </select>
+
+   <h4 class="tot" id="tot" i18n><b>Total ($)</b></h4>
+   <h4 class="tot" id="totText"></h4>
+
+   <h5 i18n><b><u>(Note)</u>: If you want to change your cart after having <br> clicked the checkout with PayPal button. Please reload the page</b></h5>
 
 
-    <div class="containerEmail">
-        <h4>Receive Email for your order</h4>
-        <form  action="https://formsubmit.co/ludovico007007@gmail.com" method="POST">
-          <div class="form-group">
-            <div class="form-row">
-              <div class="col">
-                <input type="hidden" name="_subject" value="New Order - VRODA">
-                <input type="hidden" name="_autoresponse" value="You ordered at VRODA: {{products}}">
-                <input type="email" name="email" class="textEmail" placeholder="Email Address" required>
-              </div>
+ <img  class="picture" src="./paypal.png" id="checkout" (click)="render()">
+
+ 
+  <div id="paypal"></div>
+  <div *ng-init="calculateAmount(products)" class="invisible"></div>
+
+
+  <!-- <div class="containerEmail">
+      <h4>Receive Email for your order</h4>
+      <form  action="https://formsubmit.co/ludovico007007@gmail.com" method="POST">
+        <div class="form-group">
+          <div class="form-row">
+            <div class="col">
+              <input type="hidden" name="_subject" value="New Order - VRODA">
+              <input type="hidden" name="_autoresponse" value="You ordered at VRODA: {{products}}">
+              <input type="email" name="email" class="textEmail" placeholder="Email Address" required>
             </div>
           </div>
-          <button type="submit" id="emailSubmit" class="invisible">Confirm</button>
-        </form>
-      </div>
+        </div>
+        <button type="submit" id="emailSubmit" class="invisible">Confirm</button>
+      </form>
+    </div> -->
 </div>

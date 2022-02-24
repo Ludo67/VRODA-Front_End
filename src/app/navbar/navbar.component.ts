@@ -14,6 +14,9 @@ import { TokenStorageService } from '../_services/token-storage.service';
 })
 export class NavbarComponent implements OnInit, OnDestroy {
 
+  siteLanguage: string = 'English';
+  siteLocale!:string;
+
   public searchForm!:FormGroup;
   title: string = "";
 
@@ -24,7 +27,13 @@ export class NavbarComponent implements OnInit, OnDestroy {
   username?: string;
   eventBusSub?: Subscription;
 
+  languageList = [  
+    { code: 'en', label: 'English' },  
+    { code: 'fr', label: 'Français' },  
+  
+  ];
 
+  isEnglish!: boolean;
 
   constructor( 
     private router:Router,
@@ -49,6 +58,16 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this.eventBusSub = this.eventBusService.on('logout', () => {
       this.logout();
     });
+    this.siteLocale = window.location.pathname.split('/')[1];
+    this.siteLanguage = this.languageList.find(f => f.code === this.siteLocale).label;
+
+    if (window.location.pathname.split('/')[1] == "fr"){
+      this.isEnglish = false;
+    }
+    else if (window.location.pathname.split('/')[1] == "en"){
+      this.isEnglish = true;
+    }
+
   }
   ngOnDestroy(): void {
     if (this.eventBusSub)
@@ -76,5 +95,9 @@ export class NavbarComponent implements OnInit, OnDestroy {
     }
   }
   
+  // public selectLanguage(){
+  //   this.siteLocale = window.location.pathname.split('/')[1];
+  //   this.siteLanguage = this.languageList.find(f => f.code === this.siteLocale).label;
+  // }
   
 }

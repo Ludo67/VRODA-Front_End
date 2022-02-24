@@ -13,6 +13,12 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "locales": {
+          "fr":"src/translate/messages.fr.xlf",
+          "en":"src/translate/messages.en.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -33,6 +39,12 @@
             "scripts": []
           },
           "configurations": {
+            "fr":{
+              "localize":["fr"]
+            },
+            "en":{
+              "localize":["en"]
+            },
             "production": {
               "budgets": [
                 {
@@ -73,6 +85,12 @@
             },
             "development": {
               "browserTarget": "VRODA-Web_App:build:development"
+            },
+            "fr":{
+              "browserTarget": "VRODA-Web_App:build:fr"
+            },
+            "en":{
+              "browserTarget": "VRODA-Web_App:build:en"
             }
           },
           "defaultConfiguration": "development"

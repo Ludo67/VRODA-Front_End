@@ -3,7 +3,7 @@
     <h1 class="text-center text-muted catalog">VRODA Catalog</h1>
     <hr> 
     <div class="wrapper">
-      <select name="filter" id="filter" (change)="sortItems(products)">
+      <select i18n name="filter" id="filter" (change)="sortItems(products)">
         <option id="noFilter" value="noFilter">No Filter</option>
         <option id="priceAsc" value="priceAsc">Price &#8593;</option>
         <option id="priceDsc" value="priceDsc">Price &#8595;</option>
@@ -11,7 +11,7 @@
         <option id="nameDsc" value="nameDsc">Name (Z-A)</option>
       </select>
       
-      <a mat-button routerLink="addProduct" class="nab_btn"  *ngIf="isLoggedIn && roles.includes('ROLE_CLERK')">Add Product</a>
+      <a mat-button routerLink="addProduct" class="nab_btn"  *ngIf="isLoggedIn && roles.includes('ROLE_CLERK')" i18n>Add Product</a>
     <div class="row flow-offset-1 text-center">
       <div *ngFor="let product of products" class="col-xs-6 col-md-4 " fxLayout="row" fxLayoutAlign="space-around center"> 
         <div class="container">

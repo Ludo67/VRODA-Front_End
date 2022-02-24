@@ -1,5 +1,5 @@
 <div class="container bootstrap snipets">
-    <h1 class="text-center text-muted catalog">VRODA Catalog</h1>
+    <h1 class="text-center text-muted catalog" i18n>VRODA Catalog</h1>
     <hr>
     <div class="wrapper">
         
@@ -13,7 +13,7 @@
         <br>
         <span class="price">{{product.price}} $</span>
         <br><br>
-        <h5><b><u>(Note)</u>: The prices are in $USD</b></h5>
+        <h5 i18n><b><u>(Note)</u>: The prices are in $USD</b></h5>
         <!-- <span class="quantity">{{product.quantity}}</span> -->
         <br>
         <span class="description">{{product.description}}</span>
@@ -26,11 +26,11 @@
     </div>
  
     <hr>
-    <a mat-button (click)="deleteProductById(product.productId)" class="nab_btn2" *ngIf="isLoggedIn && roles.includes('ROLE_CLERK')" id="delete">Delete</a> &nbsp;
-    <a mat-button (click)="updateProduct(product.productId, product.categoryId)" *ngIf="isLoggedIn && roles.includes('ROLE_CLERK')" class="nab_btn2" id="update">Update</a>&nbsp;
+    <a mat-button (click)="deleteProductById(product.productId)" class="nab_btn2" *ngIf="isLoggedIn && roles.includes('ROLE_CLERK')" id="delete" i18n>Delete</a> &nbsp;
+    <a mat-button (click)="updateProduct(product.productId, product.categoryId)" *ngIf="isLoggedIn && roles.includes('ROLE_CLERK')" class="nab_btn2" id="update" i18n>Update</a>&nbsp;
 
-    <a mat-button (click)="addToCart(product)" class="nab_btn3" id="addToCart">Add To Cart</a>
+    <a mat-button (click)="addToCart(product)" class="nab_btn3" id="addToCart" i18n>Add To Cart</a>
     <img class="{{product.image}}"/>
 
-    <h4 class="addToCartText" id="addToCartText"></h4>
+    <h4 class="addToCartText" id="addToCartText" i18n></h4>
   </div>
