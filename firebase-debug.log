@@ -1,0 +1,13 @@
+[debug] [2022-02-24T15:54:43.050Z] ----------------------------------------------------------------------
+[debug] [2022-02-24T15:54:43.052Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ludok\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2022-02-24T15:54:43.052Z] CLI Version:   10.2.1
+[debug] [2022-02-24T15:54:43.052Z] Platform:      win32
+[debug] [2022-02-24T15:54:43.052Z] Node Version:  v16.14.0
+[debug] [2022-02-24T15:54:43.053Z] Time:          Thu Feb 24 2022 10:54:43 GMT-0500 (Eastern Standard Time)
+[debug] [2022-02-24T15:54:43.053Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-02-24T15:54:43.102Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-02-24T15:54:43.102Z] > authorizing via signed-in user (ludomarcoux098@gmail.com)
+[debug] [2022-02-24T15:54:43.102Z] [iam] checking project vroda-front for permissions ["firebase.projects.get"]
+[debug] [2022-02-24T15:54:43.104Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/vroda-front:testIamPermissions [none]
+[debug] [2022-02-24T15:54:43.105Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/vroda-front:testIamPermissions {"permissions":["firebase.projects.get"]}
